@@ -23,4 +23,5 @@ var productExceptSelf = function (nums) {
     }
     return result;
 };
+
 // @lc code=end
