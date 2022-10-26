@@ -16,13 +16,15 @@ var wordPattern = function (pattern, s) {
 
     for (let i = 0; i < pattern.length; i++) {
         let patt = pattern[i]
-        for (let j = 0; j < s.split(' '.length); j++) {
-            let w = s.split(' ')[i]
-            if (w !== word1 && w !== word2) return false
+        for (let j = 0; j < s.split(' ').length; j++) {
+            let w = s.split(' ')[j]
+            // if (w !== word1 || w !== word2) return false
             if (patt === 'a' && w !== word1) return false
             if (patt === 'b' && w !== word2) return false
         }
     }
     return true
 };
+
+
 // @lc code=end
