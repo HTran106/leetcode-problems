@@ -17,16 +17,12 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var sumOfLeftLeaves = function(root) {
-    let rootNode = root.val
-    let sum = 0
-
-    let currNode = rootNode.shift()
-    while (currNode.left) {
-        sum += currNode.val
-        currNode = currNode.left
-    }
-    return sum
+var sumOfLeftLeaves = function(root, sum=0) {
+    let currNode = root
+    if (!currNode.left) return sum
+    sum += currNode.val
+    currNode = currNode.left
+    return sumOfLeftLeaves(currNode,)
 };
 
 
