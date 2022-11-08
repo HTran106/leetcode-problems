@@ -18,11 +18,13 @@
  * @return {number}
  */
 var sumOfLeftLeaves = function(root, sum=0) {
-    let currNode = root
-    if (!currNode.left) return sum
-    sum += currNode.val
-    currNode = currNode.left
-    return sumOfLeftLeaves(currNode,)
+    if (!root) {
+        return 0;
+    }
+    if (root.left && !root.left.left && !root.left.right) {
+        sum += root.left.val;
+    }
+    return sum + sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
 };
 
 
