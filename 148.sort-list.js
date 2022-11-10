@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode id=19 lang=javascript
+ * @lc app=leetcode id=148 lang=javascript
  *
- * [19] Remove Nth Node From End of List
+ * [148] Sort List
  */
 
 // @lc code=start
@@ -14,23 +14,19 @@
  */
 /**
  * @param {ListNode} head
- * @param {number} n
  * @return {ListNode}
  */
-var removeNthFromEnd = function (head, n) {
+var sortList = function(head) {
     let curr = head;
-    let prev = null;
+    let prev = curr;
 
-    let i = 0;
     while (curr) {
-        if (n - i === 0) {
-            prev = curr.next
-            curr = curr.next.next
+        if (curr.val >= curr.next.val) {
+            curr.next = curr
+            curr.next = prev
         }
-        curr = curr.next
         prev = curr
-        i++
+        curr = curr.next
     }
-    return head
 };
 // @lc code=end
