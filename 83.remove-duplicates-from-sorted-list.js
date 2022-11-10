@@ -18,10 +18,13 @@
  */
 var deleteDuplicates = function(head) {
     let curr = head
-    let done = []
-    let prev = curr
-    while (curr) {
-        if (done.includes(curr.val))
+    while (curr && curr.next) {
+        if (curr.val === curr.next.val) {
+            curr.next = curr.next.next
+        } else {
+            curr = curr.next
+        }
     }
+    return head
 };
 // @lc code=end
