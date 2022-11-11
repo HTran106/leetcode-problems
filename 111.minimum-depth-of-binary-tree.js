@@ -20,6 +20,15 @@
 var minDepth = function(root) {
     let queue = [root];
     let depth = 0;
-    
+
+    while (queue.length) {
+        let curr = queue.shift()
+        if (curr.left && curr.right) {
+            depth++
+            queue.push(curr.left, curr.right)
+        } else {
+            return depth
+        }
+    }
 };
 // @lc code=end
