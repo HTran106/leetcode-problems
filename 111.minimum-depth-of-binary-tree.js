@@ -17,18 +17,23 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var minDepth = function(root) {
+var minDepth = function (root) {
     let queue = [root];
-    let depth = 0;
+    let depth = 1;
 
     while (queue.length) {
         let curr = queue.shift()
-        if (curr.left && curr.right) {
-            depth++
-            queue.push(curr.left, curr.right)
+        if (curr.left) {
+            queue.push(curr.left)
         } else {
             return depth
         }
+        if (curr.right) {
+            queue.push(curr.right)
+        } else {
+            return depth
+        }
+        depth++
     }
 };
 // @lc code=end
