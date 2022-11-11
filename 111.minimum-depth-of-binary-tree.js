@@ -19,21 +19,18 @@
  */
 var minDepth = function (root) {
     let queue = [root];
-    let depth = 1;
-
+    let depth = 0;
+    if (!root) return depth;
     while (queue.length) {
-        let curr = queue.shift()
-        if (curr.left) {
-            queue.push(curr.left)
-        } else {
-            return depth
+        let len = queue.length;
+        depth++;
+        for (let i = 0; i < len; i++) {
+            let node = queue.shift();
+            if (!node.left && !node.right) return depth;
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
         }
-        if (curr.right) {
-            queue.push(curr.right)
-        } else {
-            return depth
-        }
-        depth++
     }
+    return depth;
 };
 // @lc code=end
