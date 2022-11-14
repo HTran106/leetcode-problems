@@ -24,16 +24,7 @@ var maxDepth = function(root) {
 };
 
 var isBalanced = function(root) {
-    let left = 0;
-    let right = 0;
     if (root === null) return true;
-    if (root.left !== null) {
-        left = maxDepth(root.left);
-    }
-    if (root.right !== null) {
-        right = maxDepth(root.right);
-    }
-    if (Math.abs(left - right) > 1) return false;
-    return isBalanced(root.left) && isBalanced(root.right);
+    return Math.abs(maxDepth(root.left) - maxDepth(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right);
 };
 // @lc code=end

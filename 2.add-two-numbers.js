@@ -18,26 +18,53 @@
  * @return {ListNode}
  */
 var addTwoNumbers = function (l1, l2) {
-    let dummy = new ListNode(0);
-    let cur = dummy;
-    let carry = 0;
-    while (l1 || l2) {
-        let sum = carry;
-        if (l1) {
-        sum += l1.val;
-        l1 = l1.next;
+    let curr1 = l1
+    let curr2 = l2
+    let num1 = []
+    let num2 = []
+    while (curr1 || curr2) {
+        if (curr1) {
+            num1.push(curr1.val)
+            curr1 = curr1.next
         }
-        if (l2) {
-        sum += l2.val;
-        l2 = l2.next;
+        if (curr2) {
+            num2.push(curr2.val)
+            curr2 = curr2.next
         }
-        carry = Math.floor(sum / 10);
-        cur.next = new ListNode(sum % 10);
-        cur = cur.next;
     }
-    if (carry) {
-        cur.next = new ListNode(carry);
+
+    num1 = +num1.reverse().join('')
+    num2 = +num2.reverse().join('')
+    let res = num1 + num2
+    res = res.toString().split('').reverse()
+    let head = new ListNode(+res.shift())
+    let curr = head
+    while (res.length) {
+        curr.next = new ListNode(+res.shift())
+        curr = curr.next
     }
-    return dummy.next;
+    return head
+
+    // let dummy = new ListNode(0);
+    // let cur = dummy;
+    // let carry = 0;
+    // while (l1 || l2) {
+    //     let sum = carry;
+    //     if (l1) {
+    //     sum += l1.val;
+    //     l1 = l1.next;
+    //     }
+    //     if (l2) {
+    //     sum += l2.val;
+    //     l2 = l2.next;
+    //     }
+    //     carry = Math.floor(sum / 10);
+    //     cur.next = new ListNode(sum % 10);
+    //     cur = cur.next;
+    // }
+    // if (carry) {
+    //     cur.next = new ListNode(carry);
+    // }
+    // return dummy.next;
 };
 // @lc code=end
