@@ -10,8 +10,9 @@
  * @return {number}
  */
 var arrangeCoins = function(n) {
+    if (n === 1) return 1
     let arr = [];
-    for (let i = 1; i < n; i++) {
+    for (let i = 1; i <= n; i++) {
         arr.push(new Array(i))
         n -= i
     }
