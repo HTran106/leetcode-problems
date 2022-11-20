@@ -18,19 +18,6 @@
  * @return {ListNode}
  */
 var removeNthFromEnd = function (head, n) {
-    let curr = head;
-    let prev = null;
-
-    let i = 0;
-    while (curr) {
-        if (n - i === 0) {
-            prev = curr.next
-            curr = curr.next.next
-        }
-        curr = curr.next
-        prev = curr
-        i++
-    }
-    return head
+    
 };
 // @lc code=end
