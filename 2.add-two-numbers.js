@@ -17,22 +17,22 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function (l1, l2) {
-    let curr1 = l1;
-    let curr2 = l2;
-    let num1 = ''
-    let num2 = ''
-    while (curr1 || curr2) {
-        num1 += curr1.val
-        num2 += curr2.val
-        curr1 = curr1.next
-        curr2 = curr2.next
-    }
-    num1 = +num1.split('').reverse().join('')
-    num2 = +num2.split('').reverse().join('')
-    let values = (num1 + num2).toString().split('')
-    let head = new ListNode(values[0])
-    for (let i = 1; i < values.length; i++) {}
+var addTwoNumbers = function (l1, l2, carry=0) {
+    if (l1 === null && l2 === null && carry === 0) return null;
 
+    const val1 = l1 === null ? 0 : l1.val;
+    const val2 = l2 === null ? 0 : l2.val;
+
+    const sum = val1 + val2 + carry;
+    const nextCarry = sum > 9 ? 1 : 0;
+    const digit = sum % 10;
+    const result = new ListNode(digit);
+
+    const next1 = l1 === null ? null : l1.next
+    const next2 = l2 === null ? null : l2.next
+
+    result.next = addTwoNumbers(next1, next2, nextCarry);
+
+    return result;
 };
 // @lc code=end
