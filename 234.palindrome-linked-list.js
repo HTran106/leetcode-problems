@@ -17,14 +17,12 @@
  * @return {boolean}
  */
 var isPalindrome = function (head) {
-    let dummy = new ListNode(null);
-    let prev = null;
     let curr = head;
+    let arr = [];
     while (curr) {
-        prev = curr
-        dummy.next = prev
-        curr = dummy.next
+        arr.push(curr.val)
+        curr = curr.next
     }
-    console.log(head, dummy)
+    return arr.toString() == arr.reverse().toString()
 };
 // @lc code=end
