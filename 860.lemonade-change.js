@@ -11,15 +11,9 @@
  */
 var lemonadeChange = function(bills) {
     let total = 0
-    bills.forEach(bill => {
-        console.log(total)
-        if (bill !== 5) {
-            if (total - bill < 0) return false
-            else total -= bill
-        } else {
-            total += bill
-        }
-    })
+    let curr = bills.shift()
+    if (total - curr < 0) return false
+    total += curr - 5
     return true
 };
 // @lc code=end
