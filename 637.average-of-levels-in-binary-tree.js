@@ -17,6 +17,7 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
+//
 var averageOfLevels = function(root) {
     if (!root) return []
     let queue
