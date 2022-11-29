@@ -17,7 +17,14 @@
  * @return {ListNode}
  */
 var middleNode = function(head) {
-    let count = 0;
+    let count = 1;
+    let curr = head;
+    while (curr) {
+        count++
+        curr = curr.next
+    }
+    count = Math.ceil(count / 2)
+    curr = head
     
 };
 // @lc code=end
