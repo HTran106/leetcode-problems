@@ -21,8 +21,13 @@ var checkValid = function(matrix) {
             let row = temp[i][j]
             let col = temp[j][i]
             if (temp.includes(row)) temp.splice(temp.indexOf(row), 1)
-            if ()
+            else return false
+            if (temp2.includes(col)) temp2.splice(temp2.indexOf(col), 1)
+            else return false
         }
+        temp = range
+        temp2 = range
     }
+    return true
 };
 // @lc code=end
