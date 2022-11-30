@@ -17,18 +17,25 @@
  * @return {ListNode}
  */
 var middleNode = function(head) {
-    let count = 1;
-    let curr = head;
-    while (curr) {
-        count++
-        curr = curr.next
+    // let count = 1;
+    // let curr = head;
+    // while (curr) {
+    //     count++
+    //     curr = curr.next
+    // }
+    // count = Math.ceil(count / 2)
+    // curr = head
+    // while (curr) {
+    //     if (count === 1) return curr
+    //     curr = curr.next
+    //     count--
+    // }
+    let slow = head
+    let fast = head
+    while (fast && fast.next) {
+        slow = slow.next
+        fast = fast.next.next
     }
-    count = Math.ceil(count / 2)
-    curr = head
-    while (curr) {
-        if (count === 1) return curr
-        curr = curr.next
-        count--
-    }
+    return slow
 };
 // @lc code=end
