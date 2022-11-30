@@ -25,6 +25,10 @@ var middleNode = function(head) {
     }
     count = Math.ceil(count / 2)
     curr = head
-    
+    while (curr) {
+        if (count === 1) return curr
+        curr = curr.next
+        count--
+    }
 };
 // @lc code=end
