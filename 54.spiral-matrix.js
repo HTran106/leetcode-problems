@@ -10,7 +10,10 @@
  * @return {number[]}
  */
 var spiralOrder = function(matrix) {
-    
+    let res = []
+
+    while (res.length !== matrix.flat().length) {
+        res = [...res, matrix[0].splice()]
+    }
 };
 // @lc code=end
-
