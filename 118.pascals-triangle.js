@@ -10,7 +10,25 @@
  * @return {number[][]}
  */
 var generate = function (numRows) {
-    let res = [
+    if (numRows === 1) return [[1]]
+    let triangle = [[1], [1,1]]
+    if (numRows === 2) return triangle
+    while (triangle.length < numRows) {
+        let newRow = [1]
+        let prevRow = triangle[triangle.length - 1]
+        for (let i = 0; i < prevRow.length - 1; i++) {
+            newRow.push(prevRow[i] + prevRow[i + 1])
+        }
+        newRow.push(1)
+        triangle.push(newRow)
+    }
+    return triangle
+};
+// @lc code=end
+
+
+/*
+let res = [
         [1],
     ];
 
@@ -24,5 +42,4 @@ var generate = function (numRows) {
         res.push(newRow);
     }
     return res
-};
-// @lc code=end
+*/
