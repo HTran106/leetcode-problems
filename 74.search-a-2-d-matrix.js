@@ -11,7 +11,6 @@
  * @return {boolean}
  */
 var searchMatrix = function(matrix, target) {
-    if (!matrix.flat().includes(target)) return false
-    return true
+    return matrix.flat().includes(target)
 };
 // @lc code=end
