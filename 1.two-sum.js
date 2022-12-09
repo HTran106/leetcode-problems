@@ -11,34 +11,35 @@
  * @return {number[]}
  */
 /*
-Input: array;
-Output: array with 2 indexes.
-to get the output, I would add 2 unique numbers that adds up to the target.
+input: array of integers, target integer
+output: an array with two indices
+sum must be two unique numbers
+if no solution, return empty array
 
-
-first thing i would is create 2 pointers, one at the beginning and one at the end.
-then I would iterate through the array and add the 2 numbers together.
-if the sum is not the target, i would move the pointers accordingly
+first thing i would is create 2 pointers
+one in the beginning
+one in the end
+create a copy of original input array
+sort the copy
+while the pointers are not equal
+if number[i] + number[j] is lesser than target, i would increase my i pointer
+if it is greater, i would decrease my j pointer
+this should keep iterating until i find the solution and if i find a match, i would return an array with the two index of the number from the original array.
 */
-// [1, 2, 3, 4, 5], 9
-// i = 1
-// j = 5
+
+[3, 3]
 
 var twoSum = function (nums, target) {
     let i = 0;
     let j = nums.length - 1;
-    let sorted = [...nums]
-    sorted.sort((a, b) => a - b);
+    let copy = [...nums];
+    copy.sort((a, b) => a - b);
     while (i < j) {
-        let sum = sorted[i] + sorted[j];
-        if (sum === target) {
-            return [nums.indexOf(sorted[i]), nums.lastIndexOf(sorted[j])];
-        } else if (sum > target) {
-            j--;
-        } else {
-            i++;
-        }
+        let sum = copy[i] + copy[j];
+        if (sum === target) return [nums.indexOf(copy[i]), nums.lastIndexOf(copy[j])]
+        if (sum > target) j--
+        else i++
     }
-    return [];
+    return []
 };
 // @lc code=end
