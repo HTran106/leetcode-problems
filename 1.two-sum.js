@@ -33,6 +33,7 @@ var twoSum = function (nums, target) {
     let i = 0
     let j = nums.length - 1
     let copy = [...nums]
+    copy = copy.sort((a, b) => a - b)
     while (i < j) {
         let num1 = copy[i]
         let num2 = copy[j]
@@ -40,5 +41,9 @@ var twoSum = function (nums, target) {
         if (num1 + num2 > target) j--
         else i++
     }
+    return []
 };
+//      i   j
+// [1,2,3,4,5] 8
+
 // @lc code=end
