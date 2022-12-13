@@ -26,7 +26,6 @@ var summaryRanges = function (nums) {
     const res = [];
     let firstNum = nums[0]
     nums.forEach((num, i) => {
-
         if (nums[i + 1] !== num + 1) { // [1,1,2,3,3,4]
             if (firstNum === num) {
                 res.push(`${firstNum}`)
