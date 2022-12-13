@@ -27,17 +27,18 @@ increment i
 once found, return the index of the 2 elements from original nums array
 */
 
-[3, 3]
+// [3, 3]
 
 var twoSum = function (nums, target) {
-    let copy = [...nums]
-    copy.sort((a,b) => a - b)
     let i = 0
     let j = nums.length - 1
+    let copy = [...nums]
     while (i < j) {
-        if (copy[i] + copy[j] === target) return [nums.indexOf(copy[i]), nums.lastIndexOf(copy[j])]
-        if (copy[i] + copy[j] > target) j--
-        if (copy[i] + copy[j] < target) i++
+        let num1 = copy[i]
+        let num2 = copy[j]
+        if (num1 + num2 === target) return [nums.indexOf(num1), nums.lastIndexOf(num2)]
+        if (num1 + num2 > target) j--
+        else i++
     }
 };
 // @lc code=end
