@@ -44,3 +44,12 @@ var isValid = function(s) {
    return stack.length === 0
 };
 // @lc code=end
+
+
+//create a function to find out what century a year is in
+
+function centuryFromYear(year) {
+    let century = Math.floor(year / 100)
+    if (year % 100 === 0) return century
+    else return century + 1
+}
