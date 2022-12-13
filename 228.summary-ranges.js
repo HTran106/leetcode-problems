@@ -9,15 +9,35 @@
  * @param {number[]} nums
  * @return {string[]}
  */
-var summaryRanges = function(nums) {
-    for (let i = 0; i < nums.length; i++) {
-        let j = i;
-        while (nums[j] + 1 === nums[j + 1]) j++;
-        if (i < j) {
-            nums[i] = nums[i] + '->' + nums[j];
-            nums.splice(i + 1, j - i);
+
+
+/*
+input: sorted array
+output: array of strings containing ranges
+
+APPROACH:
+initialize a res empty array
+iterate through the array and i want to check if my element at the ith index + 1 is equal to 1 more than the current index.
+if it isn't, i would iterpolate a string and push it into my results array
+return my array
+
+*/
+var summaryRanges = function (nums) {
+    const res = [];
+    let firstNum = nums[0]
+    nums.forEach((num, i) => {
+
+        if (nums[i + 1] !== num + 1) { // [1,1,2,3,3,4]
+            if (firstNum === num) {
+                res.push(`${firstNum}`)
+                firstNum = nums[i + 1]
+            }
+            else {
+                res.push(`${firstNum}->${num}`)
+                firstNum = nums[i + 1]
+            }
         }
-    }
-    return nums;
+    })
+    return res
 };
 // @lc code=end
