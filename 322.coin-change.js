@@ -12,7 +12,7 @@
  */
 var coinChange = function (coins, amount) {
     if (amount === 0) return 0
-    if (coins.length === 1 && coins[0] !== amount) return -1
+    if (coins.length === 1 && coins[0] > amount) return -1
     let obj = {};
     coins.sort((a, b) => b - a)
     coins.forEach(coin => {
