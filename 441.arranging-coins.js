@@ -12,14 +12,11 @@
 
 
 var arrangeCoins = function(n) {
-    let res = [[1]]
-    n = n - 1
-    while (n !== 0) {
-        let nextLength = res[res.length - 1].length + 1
-        if (nextLength > n) return res.length
-        else res.push(new Array(nextLength))
-        n -+ nextLength
+    let i = 1
+    while (n >= i) {
+        n -= i
+        i++
     }
-    return res.length 
+    return i - 1
 };
 // @lc code=end
