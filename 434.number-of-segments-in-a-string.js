@@ -11,10 +11,6 @@
  */
 var countSegments = function (s) {
     let segments = s.split(' ')
-    let count = 0
-    segments.forEach(segment => {
-        if (!' '.includes(segment)) count++
-    })
-    return count
+    return segments.filter(segment => !" ".includes(segment)).length
 };
 // @lc code=end
