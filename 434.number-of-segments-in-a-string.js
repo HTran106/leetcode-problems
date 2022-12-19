@@ -10,9 +10,11 @@
  * @return {number}
  */
 var countSegments = function (s) {
-    s = s.trim()
-    console.log(s)
-    if (!s.length) return 0
-    return s.split(' ').length
+    let segments = s.split(' ')
+    let count = 0
+    segments.forEach(segment => {
+        if (!' '.includes(segment)) count++
+    })
+    return count
 };
 // @lc code=end
