@@ -10,6 +10,8 @@
  * @return {number}
  */
 var countSegments = function (s) {
+    s = s.trim()
+    console.log(s)
     if (!s.length) return 0
     return s.split(' ').length
 };
