@@ -17,16 +17,22 @@
 //     [1, 1, 0, 0]
 // ]
 
-var islandPerimeter = function (grid) {
-    let count = 0
-    for (let row = 0; row < grid.length; row++) {
-        for (let col = 0; col < grid[row].length; col++) {
-            if (grid[row][col] === 1) {
-                if (row > 0 && grid[row + 1][col] !== 1) count++
-                if (row > 0 && grid[row - 1][col] !== 1) count++
-                if (col > 0 && grid[row][col - 1] !== 1) count++
-                if (col > 0 && grid[row][col +] !== 1) count++
+const dfs = (grid, i, j) => {
+    if (i < 0 || i >= grid.length || j < 0 || j >= grid[i].length || grid[i][j] === 0) {
+        return 1;
+    }
+    if (grid[i][j] === -1) {
+        return 0;
+    }
+    grid[i][j] = -1;
+    return dfs(grid, i - 1, j) + dfs(grid, i + 1, j) + dfs(grid, i, j - 1) + dfs(grid, i, j + 1);
+};
 
+var islandPerimeter = function (grid) {
+    for (let i = 0; i < grid.length; i++) {
+        for (let j = 0; j < grid[i].length; j++) {
+            if (grid[i][j] === 1) {
+                return dfs(grid, i, j);
             }
         }
     }
