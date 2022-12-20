@@ -10,8 +10,15 @@
  * @return {number}
  */
 
+[
+    [0, 1, 0, 0],
+    [1, 1, 1, 0],
+    [0, 1, 0, 0],
+    [1, 1, 0, 0]
+]
 
-var islandPerimeter = function(grid) {
+
+var islandPerimeter = function (grid) {
     let count = 0
 
     for (let row = 0; row < grid.length; row++) {
