@@ -9,17 +9,18 @@
  * @param {number[]} score
  * @return {string[]}
  */
-var findRelativeRanks = function(score) {
+var findRelativeRanks = function (score) {
     let ranks = {
         1: 'Gold Medal',
         2: 'Silver Medal',
         3: 'Bronze Medal',
-        4: '4',
-        5: '5',
     }
 
-    score.sort((a, b) => a - b)
     let res = []
-    score.forEach(score => )
+    score.forEach(s => {
+        if (s <= 3) res.push(ranks[sorted.indexOf(s) + 1])
+        else res.push(s.toString())
+    })
+    return res
 };
 // @lc code=end
