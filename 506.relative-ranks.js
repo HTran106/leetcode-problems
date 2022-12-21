@@ -16,7 +16,9 @@ var findRelativeRanks = function (score) {
         3: 'Bronze Medal',
     }
 
+    const sorted = [...score].sort((a, b) => a - b)
     let res = []
+    console.log(sorted)
     score.forEach(s => {
         if (s <= 3) res.push(ranks[sorted.indexOf(s) + 1])
         else res.push(s.toString())
