@@ -12,20 +12,10 @@
  */
 var licenseKeyFormatting = function(s, k) {
     let copy = s.replaceAll("-", "")
-    console.log(copy)
     let res = []
-    let counter = 1
-    let arr = []
-    for (let i = s.length - 1; i >= 0; i--) {
-        if (counter === k) {
-            res = [...arr, ...res]
-            str = ''
-            counter = 1
-        } else {
-            arr.unshift(copy[i])
-            counter++
-        }
+    for (let i = copy.length - k; i >= 0; i -= k) {
+        res.unshift(copy.slice(i, i + 4).toUpperCase())
     }
-    return res.join("-")
+    return res.join('-')
 };
 // @lc code=end
