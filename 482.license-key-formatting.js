@@ -18,11 +18,11 @@ var licenseKeyFormatting = function(s, k) {
     let arr = []
     for (let i = s.length - 1; i >= 0; i--) {
         if (counter === k) {
-            res.unshift(str)
+            res = [...arr, ...res]
             str = ''
             counter = 1
         } else {
-            str += copy[i]
+            arr.unshift(copy[i])
             counter++
         }
     }
