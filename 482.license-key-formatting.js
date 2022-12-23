@@ -11,10 +11,10 @@
  * @return {string}
  */
 var licenseKeyFormatting = function(s, k) {
-    let copy = s.replaceAll("-", "")
+    let copy = s.split('-')
     let res = []
     for (let i = copy.length - k; i >= 0; i -= k) {
-        res.unshift(copy.slice(i, i + 4).toUpperCase())
+        res.unshift(copy.splice(i, copy.length, k).toUpperCase())
     }
     return res.join('-')
 };
