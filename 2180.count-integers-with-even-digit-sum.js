@@ -9,12 +9,14 @@
  * @param {number} num
  * @return {number}
  */
-var countEven = function(num) {
+var countEven = function (num) {
     let count = 0
     for (let i = 1; i <= num; i++) {
-        i % 2 === 0 ? count++ : null
+        const n = i.toString().split('').reduce((a, c) => a + c)
+        console.log(n)
+        n % 2 === 0 ? count++ : null
     }
     return count
 };
 // @lc code=end
-[2,4,6,8,10,12,14,16,18,20,22,24,26,28,30]
+console.log(parseInt(19).toString().split('').reduce((a, c) => parseInt(a) + parseInt(c)))
