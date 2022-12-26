@@ -10,9 +10,9 @@
  * @return {string[]}
  */
 var findWords = function(words) {
-    let top = "qwertyuiop[]";
-    let mid = "asdfghjkl;'";
-    let bot = "zxcvbnm,./";
+    let top = "qwertyuiop";
+    let mid = "asdfghjkl";
+    let bot = "zxcvbnm";
     let result = [];
     for (let i = 0; i < words.length; i++) {
         let word = words[i].toLowerCase();
