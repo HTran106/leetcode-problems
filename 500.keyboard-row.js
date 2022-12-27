@@ -26,9 +26,14 @@ var findWords = function (words) {
         let word = words[i]
         for (let j = 0; j < word.length; j++) {
             let char = word[j].toLowerCase()
-            if (!rows[row].includes(char)) row++
+            if (!rows[row].includes(char)) {
+                j = 0
+                row++
+            }
             if (row === 4) break
+            if (j === word.length - 1 && rows[row].includes(char)) res.push(word)
         }
     }
+    return res
 };
 // @lc code=end
