@@ -19,13 +19,14 @@ var findWords = function (words) {
         3: "zxcvbnm"
     }
 
-    let i = 1
+    let row = 1
     let res = []
     for (let i = 0; i < words.length; i++) {
         let word = words[i]
         for (let j = 0; j < word.length; j++) {
             let char = word[j].toLowerCase()
-
+            if (!rows[i].includes(char)) row++
+            if (i === 4)
         }
     }
 };
