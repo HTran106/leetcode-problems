@@ -22,11 +22,12 @@ var findWords = function (words) {
     let row = 1
     let res = []
     for (let i = 0; i < words.length; i++) {
+        row = 1
         let word = words[i]
         for (let j = 0; j < word.length; j++) {
             let char = word[j].toLowerCase()
-            if (!rows[i].includes(char)) row++
-            if (i === 4)
+            if (!rows[row].includes(char)) row++
+            if (row === 4) break
         }
     }
 };
