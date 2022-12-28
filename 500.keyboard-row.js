@@ -34,16 +34,19 @@ var findWords = function (words) {
                     row = 0;
                     break;
                 }
-                
-    words.forEach(word => {
-        word.forEach(char => {
-            char = char.toLowerCase();
-            if (!top.includes(char) && !mid.includes(char) && !bot.includes(char)) {
-                return;
+            } else if (bot.includes(char)) {
+                if (row == 0) {
+                    row = 3;
+                } else if (row == 1 || row == 2) {
+                    row = 0;
+                    break;
+                }
             }
-        })
-        res.push(word);
-    })
+        }
+        if (row != 0) {
+            res.push(words[i]);
+        }
+    }
     return res;
 };
 // @lc code=end
