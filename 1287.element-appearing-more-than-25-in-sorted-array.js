@@ -16,7 +16,7 @@ var findSpecialInteger = function (arr) {
         obj[num] ? obj[num]++ : obj[num] = 1
     })
     for (let k in obj) {
-        if (obj[k] > quarter) return k
+        if (obj[k] >= quarter) return k
     }
 };
 // @lc code=end
