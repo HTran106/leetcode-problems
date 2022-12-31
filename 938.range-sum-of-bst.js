@@ -19,14 +19,21 @@
  * @param {number} high
  * @return {number}
  */
-var rangeSumBST = function(root, low, high) {
-    if (!root) return
-    if (root.val >= low && root.val <= high) {
-        if (root.left) return root.val + rangeSumBST(root.left, low, high)
-        if (root.right) return root.val + rangeSumBST(root.right, low, high)
-    } else {
-        if (root.left) return rangeSumBST(root.left, low, high)
-        if (root.right) return rangeSumBST(root.right, low, high)
+var rangeSumBST = function (root, low, high) {
+    let sum = 0;
+    let stack = [root];
+    while (stack.length > 0) {
+        let node = stack.pop();
+        if (node.val >= low && node.val <= high) {
+            sum += node.val;
+        }
+        if (node.left != null) {
+            stack.push(node.left);
+        }
+        if (node.right != null) {
+            stack.push(node.right);
+        }
     }
+    return sum;
 };
 // @lc code=end
