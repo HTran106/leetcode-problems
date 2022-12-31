@@ -10,13 +10,19 @@
  * @return {number}
  */
 var findSpecialInteger = function (arr) {
-    const obj = {}
-    let quarter = Math.ceil(arr.length / 4)
-    arr.forEach(num => {
-        obj[num] ? obj[num]++ : obj[num] = 1
-    })
-    for (let k in obj) {
-        if (obj[k] >= quarter) return k
+    const len = arr.length;
+    const threshold = len / 4;
+    let count = 1;
+    for (let i = 1; i < len; i++) {
+        if (arr[i] === arr[i - 1]) {
+            count++;
+        } else {
+            count = 1;
+        }
+        if (count > threshold) {
+            return arr[i];
+        }
     }
+    return arr[0];
 };
 // @lc code=end
