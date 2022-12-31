@@ -15,10 +15,8 @@ var findSpecialInteger = function (arr) {
     arr.forEach(num => {
         obj[num] ? obj[num]++ : obj[num] = 1
     })
-    let res;
     for (let k in obj) {
-        res = k
+        if (obj[k] > quarter) return k
     }
-    return res
 };
 // @lc code=end
