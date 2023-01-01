@@ -11,7 +11,7 @@
  */
 var replaceElements = function(arr) {
     let res = []
-    for (let i = 0; i <= arr.length - 1; i++) {
+    for (let i = 0; i < arr.length - 1; i++) {
         const newArr = arr.slice(i + 1)
         const max = Math.max(...newArr)
         max === -Infinity ? res.push(arr[i]) : res.push(max)
