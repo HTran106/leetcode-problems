@@ -11,7 +11,6 @@
  */
 var maximum69Number = function (num) {
     num = num.toString()
-    // console.log(num)
     num = num.replace('6', '9')
     return +num
 };
