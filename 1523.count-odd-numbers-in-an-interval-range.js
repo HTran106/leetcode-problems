@@ -12,8 +12,8 @@
  */
 var countOdds = function(low, high) {
     let count = 0
-    for (let i = low; i < high; i++) {
-        if (i % 2 !== 0) count++
+    for (let i = low; i <= high; i++) {
+        i % 2 !== 0 ? count++ : null
     }
     return count
 };
