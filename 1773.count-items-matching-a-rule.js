@@ -12,9 +12,13 @@
  * @return {number}
  */
 var countMatches = function(items, ruleKey, ruleValue) {
+    let count = 0
     items.filter(item => {
-        const [type, color, model] = item
-        if (ruleKey === 'color' && color === ruleValue) return
+        const [type, color, name] = item
+        if (ruleKey === 'color' && color === ruleValue) count++
+        if (ruleKey === 'type' && type === ruleValue) count++
+        if (ruleKey === 'name' && name === ruleValue) count++
     })
+    return count
 };
 // @lc code=end
