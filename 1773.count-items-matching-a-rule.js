@@ -13,7 +13,7 @@
  */
 var countMatches = function(items, ruleKey, ruleValue) {
     let count = 0
-    items.filter(item => {
+    items.forEach(item => {
         const [type, color, name] = item
         if (ruleKey === 'color' && color === ruleValue) count++
         if (ruleKey === 'type' && type === ruleValue) count++
