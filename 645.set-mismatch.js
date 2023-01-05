@@ -10,10 +10,17 @@
  * @return {number[]}
  */
 var findErrorNums = function (nums) {
-    for (let i = 0; i < nums.length; i++) {
-        let num = nums[i]
-        if (nums[i + 1] !== num + 1) nums.splice(i + 1, 1, num + 1)
+    let n = nums.length;
+    let sum = (n * (n + 1)) / 2;
+    let set = new Set();
+    let dup = -1;
+    for (let i = 0; i < n; i++) {
+        if (set.has(nums[i])) {
+        dup = nums[i];
+        }
+        set.add(nums[i]);
+        sum -= nums[i];
     }
-    return nums
+    return [dup, dup + sum];
 };
 // @lc code=end
