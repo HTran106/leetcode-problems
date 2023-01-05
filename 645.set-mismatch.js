@@ -9,9 +9,11 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var findErrorNums = function(nums) {
-    return nums.map((num, i) => {
-        num[i - 1] === num - 1 ? num : num + 1
-    })
+var findErrorNums = function (nums) {
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i]
+        if (nums[i + 1] !== num + 1) nums.splice(i + 1, 1, num + 1)
+    }
+    return nums
 };
 // @lc code=end
