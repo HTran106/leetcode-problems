@@ -10,7 +10,7 @@
  * @param {number} n
  * @return {boolean}
  */
-var canPlaceFlowers = function(flowerbed, n) {
-    return flowerbed.filter((e, i) => i % 2 !== 0 && e === 0).length >= n;
+var canPlaceFlowers = function (flowerbed, n) {
+    return flowerbed.filter((e, i) => i % 2 === 0 && e === 0 && flowerbed[i + 1] !== 1 ).length >= n
 };
 // @lc code=end
