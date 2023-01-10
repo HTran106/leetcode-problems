@@ -10,7 +10,9 @@
  * @return {number}
  */
 var maximumProduct = function(nums) {
-    
+    const res = 1
+    for (let i = 0; i < nums.length; i++) {
+        
+    }
 };
 // @lc code=end
-
