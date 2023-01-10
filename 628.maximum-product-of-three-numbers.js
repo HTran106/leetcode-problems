@@ -10,14 +10,10 @@
  * @return {number}
  */
 var maximumProduct = function (nums) {
-    let res = 1
-    nums = nums.map(el => Math.abs(el))
-    console.log(nums)
-    for (let i = 0; i < 3; i++) {
-        const max = Math.max(...nums)
-        res *= max
-        nums.splice(nums.indexOf(max), 1)
-    }
-    return res
+    nums.sort((a, b) => a - b);
+    let len = nums.length;
+    let max = nums[len - 1] * nums[len - 2] * nums[len - 3];
+    let min = nums[0] * nums[1] * nums[len - 1];
+    return Math.max(max, min);
 };
 // @lc code=end
