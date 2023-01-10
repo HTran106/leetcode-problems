@@ -9,8 +9,10 @@
  * @param {number[]} nums
  * @return {number}
  */
-var maximumProduct = function(nums) {
+var maximumProduct = function (nums) {
     let res = 1
+    nums = nums.map(el => Math.abs(el))
+    console.log(nums)
     for (let i = 0; i < 3; i++) {
         const max = Math.max(...nums)
         res *= max
