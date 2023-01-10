@@ -11,8 +11,12 @@
  */
 var maximumProduct = function(nums) {
     const res = 1
-    for (let i = 0; i < nums.length; i++) {
-        
+    for (let i = 0; i < 3; i++) {
+        const max = Math.max(...nums)
+        res *= max
+        nums.splice(nums.indexOf(max), 1)
     }
+
+    
 };
 // @lc code=end
