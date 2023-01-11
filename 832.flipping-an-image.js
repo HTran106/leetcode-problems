@@ -12,8 +12,8 @@
 var flipAndInvertImage = function(image) {
     const reversed = image.map(arr => arr.reverse())
     return reversed.map(arr => {
-        arr.map(el => {
-            console.log(el)
+        return arr.map(el => {
+           return el === 1 ? 0 : 1
         })
     })
 };
