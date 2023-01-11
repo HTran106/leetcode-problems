@@ -10,7 +10,9 @@
  * @return {number[][]}
  */
 var flipAndInvertImage = function(image) {
-    const reversed = image.map(arr => arr.split('').reverse())
-    
+    const reversed = image.map(arr => arr.reverse())
+    return reversed.map(arr => {
+        arr.
+    })
 };
 // @lc code=end
