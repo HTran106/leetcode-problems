@@ -10,7 +10,8 @@
  * @return {string}
  */
 var removeDuplicates = function(s) {
-    
+    for (let i = 0; i < s.length; i++) {
+        let char = s[i]
+    }
 };
 // @lc code=end
-
