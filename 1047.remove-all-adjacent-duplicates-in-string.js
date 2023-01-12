@@ -12,6 +12,11 @@
 var removeDuplicates = function(s) {
     for (let i = 0; i < s.length; i++) {
         let char = s[i]
+
+        if (char === s[i + 1]) {
+            s = s.slice(0, i) + s.slice(i + 2)
+            i = -1
+        }
     }
 };
 // @lc code=end
