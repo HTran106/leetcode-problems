@@ -10,17 +10,15 @@
  * @return {number}
  */
 var specialArray = function(nums) {
-    const sorted = nums.sort((a, b) => a - b);
-    for (let i = 0; i < sorted.length; i++) {
-        let num = sorted[i];
+    for (let i = 0; i <= nums.length; i++) {
         let count = 0;
-        for (let j = 0; j < sorted.length; j++) {
-            if (sorted[j] >= num) {
+        for (let j = 0; j < nums.length; j++) {
+            if (nums[j] >= i) {
                 count++;
             }
         }
-        if (count === num) {
-            return num;
+        if (count === i) {
+            return i;
         }
     }
     return -1;
