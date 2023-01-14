@@ -18,5 +18,6 @@ var removeDuplicates = function(s) {
             i = -1
         }
     }
+    return s
 };
 // @lc code=end
