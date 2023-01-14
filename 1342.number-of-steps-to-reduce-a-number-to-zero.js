@@ -20,5 +20,6 @@ var numberOfSteps = function(num) {
             num -= 1
         }
     }
+    return count
 };
 // @lc code=end
