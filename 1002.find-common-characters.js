@@ -11,14 +11,23 @@
  */
 var commonChars = function(words) {
     let res = [];
-
-    for (let i = 0; i < words.length; i++) {
-        let word = words[i]
-        let currChar;
-        for (let j = i + 1; j = words.length; j++) {
-            let char = word[j]
-            
+    let firstWord = words[0];
+    for (let i = 0; i < firstWord.length; i++) {
+        let char = firstWord[i];
+        let isCommon = true;
+        for (let j = 1; j < words.length; j++) {
+            let word = words[j];
+            if (word.indexOf(char) === -1) {
+                isCommon = false;
+                break;
+            } else {
+                words[j] = word.replace(char, '');
+            }
+        }
+        if (isCommon) {
+            res.push(char);
         }
     }
+    return res;
 };
 // @lc code=end
