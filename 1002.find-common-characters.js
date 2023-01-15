@@ -10,6 +10,15 @@
  * @return {string[]}
  */
 var commonChars = function(words) {
-    let res = []
+    let res = [];
+
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i]
+        let currChar;
+        for (let j = i + 1; j = words.length; j++) {
+            let char = word[j]
+            
+        }
+    }
 };
 // @lc code=end
