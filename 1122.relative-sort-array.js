@@ -11,19 +11,21 @@
  * @return {number[]}
  */
 var relativeSortArray = function(arr1, arr2) {
-    let res = []
+    let res = [];
     for (let i = 0; i < arr2.length; i++) {
-        let num1 = arr2[i]
+        let num = arr2[i];
+        let count = 0;
         for (let j = 0; j < arr1.length; j++) {
-            let num2 = arr1[j]
-            if (num1 === num2) {
-                const num = arr1.splice(arr1.indexOf(num2), 1)
-                res.push(num)
+            if (arr1[j] === num) {
+                count++;
             }
         }
+        for (let j = 0; j < count; j++) {
+            res.push(num);
+        }
+        arr1 = arr1.filter(item => item !== num);
     }
-    arr1.sort((a, b) => a - b)
-    res = [...res, ...arr1]
-    return res
+    arr1.sort((a, b) => a - b);
+    return res.concat(arr1);
 };
 // @lc code=end
