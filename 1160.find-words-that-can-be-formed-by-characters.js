@@ -11,6 +11,12 @@
  * @return {number}
  */
 var countCharacters = function (words, chars) {
-    
+    let sum = 0
+    for (let i = 0; i < words.length; i++) {
+        const word = words[i]
+        for (let j = 0; j < word.length; j++) {
+            
+        }
+    }
 };
 // @lc code=end
