@@ -11,9 +11,6 @@
  * @return {number}
  */
 var countCharacters = function (words, chars) {
-    chars = chars.split("").sort((a, b) => a.localeCompare(b)).join('');
-    let sum = 0
-    for (let i = 0; i < words.length; i++) {
-        
+    
 };
 // @lc code=end
