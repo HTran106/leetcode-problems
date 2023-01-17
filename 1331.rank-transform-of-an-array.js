@@ -10,7 +10,8 @@
  * @return {number[]}
  */
 var arrayRankTransform = function (arr) {
-    const sorted = [...arr].sort((a, b) => a - b)
+    let sorted = [...arr].sort((a, b) => a - b)
+    sorted = Array.from(new Set(sorted))
     const res = arr.map(num => sorted.indexOf(num) + 1)
     return res
 };
