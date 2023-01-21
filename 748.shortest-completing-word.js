@@ -12,6 +12,14 @@
  */
 var shortestCompletingWord = function(licensePlate, words) {
     const alpha = 'abcdefghijklmnopqrstuvwxyz';
-    
+    let letters = [];
+
+    for (let char of licensePlate) {
+        if (char !== ' ' && alpha.includes(char.toLowerCase())) letters.push(char.toLowerCase())
+    }
+
+    let temp = [...letters]
+    words.sort((a, b) => a.length - b.length)
+    words.forEach()
 };
 // @lc code=end
