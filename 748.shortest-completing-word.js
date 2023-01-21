@@ -10,7 +10,7 @@
  * @param {string[]} words
  * @return {string}
  */
-var shortestCompletingWord = function(licensePlate, words) {
+var shortestCompletingWord = function (licensePlate, words) {
     const alpha = 'abcdefghijklmnopqrstuvwxyz';
     let letters = [];
 
@@ -22,10 +22,12 @@ var shortestCompletingWord = function(licensePlate, words) {
     words.sort((a, b) => a.length - b.length)
     words.forEach(word => {
         for (let char of word) {
-            temp.indexOf(char) > 0 ? temp.splice(temp.indexOf(char), 1) : null
+            if (temp.indexOf(char) > -1) temp.splice(temp.indexOf(char), 1)
+            // temp.indexOf(char) > -1 ? temp.splice(temp.indexOf(char), 1) : null
         }
+        console.log(temp)
+        if (temp.length === 0) return word
         temp = [...letters]
     })
-    
 };
 // @lc code=end
