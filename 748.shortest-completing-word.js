@@ -20,6 +20,10 @@ var shortestCompletingWord = function(licensePlate, words) {
 
     let temp = [...letters]
     words.sort((a, b) => a.length - b.length)
-    words.forEach()
+    words.forEach(word => {
+        for (let char of word) {
+            
+        }
+    })
 };
 // @lc code=end
