@@ -10,10 +10,17 @@
  * @return {number}
  */
 var findLengthOfLCIS = function(nums) {
-    let count = 0
-
-    let i = 0
-    while(nums[i] < nums[i + 1]) count++
-    
+    let count = 1
+    let obj = {}
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i]
+        if (num < nums[i + 1]) {
+            count++
+        } else {
+            obj[count] = count
+            count = 1
+        }
+    }
+    return Math.max(...Object.keys(obj))
 };
 // @lc code=end
