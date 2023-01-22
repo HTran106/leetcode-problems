@@ -17,8 +17,12 @@ var findRestaurant = function(list1, list2) {
         let word1 = list1[i]
         for (let j = 0; j < list2.length; j++) {
             let word2 = list2[j]
-            if (word1 === word2 && i + j < currMax) {}
+            if (word1 === word2 && i + j <= currMax) {
+                res.push(word1)
+                currMax = i + j
+            } else if (word1 === word2)
         }
     }
+    return res
 };
 // @lc code=end
