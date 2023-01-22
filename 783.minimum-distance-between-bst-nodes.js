@@ -28,9 +28,6 @@ var minDiffInBST = function (root) {
         if (curr.right) stack.push(curr.right)
     }
 
-    let min1 = Math.min(...values)
-    values.splice(values.indexOf(Math.min(...values)), 1)
-    let min2 = Math.min(...values)
-    return Math.abs(min1 - min2)
+    
 };
 // @lc code=end
