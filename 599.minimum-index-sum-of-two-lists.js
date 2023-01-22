@@ -20,7 +20,7 @@ var findRestaurant = function(list1, list2) {
             if (word1 === word2 && i + j <= currMax) {
                 res.push(word1)
                 currMax = i + j
-            } else if (word1 === word2)
+            }
         }
     }
     return res
