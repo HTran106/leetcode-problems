@@ -28,6 +28,14 @@ var minDiffInBST = function (root) {
         if (curr.right) stack.push(curr.right)
     }
 
-    
+    let min = Infinity
+    for (let i = 0; i < values.length; i++) {
+        let num1 = values[i]
+        for (let j = i + 1; j < values.length; j++) {
+            let num2 = values[j]
+            if (Math.abs(num1 - num2) < min) min = Math.abs(num1 - num2)
+        }
+    }
+    return min
 };
 // @lc code=end
