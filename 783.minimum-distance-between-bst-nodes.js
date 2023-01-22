@@ -17,7 +17,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var minDiffInBST = function(root) {
+var minDiffInBST = function (root) {
     const values = [];
     const stack = [root]
 
@@ -31,7 +31,6 @@ var minDiffInBST = function(root) {
     let min1 = Math.min(...values)
     values.splice(values.indexOf(Math.min(...values)), 1)
     let min2 = Math.min(...values)
-    
     return Math.abs(min1 - min2)
 };
 // @lc code=end
