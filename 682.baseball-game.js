@@ -10,9 +10,12 @@
  * @return {number}
  */
 var calPoints = function(operations) {
-    let res = 0
+    let res = []
     operations.forEach(operation => {
-        
+        if (operation === '+') {
+            let prev1 = res[res.length - 1]
+            let prev2 = res[res.length - 2]
+        }
     })
 };
 // @lc code=end
