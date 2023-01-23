@@ -15,6 +15,11 @@ var calPoints = function(operations) {
         if (operation === '+') {
             let prev1 = res[res.length - 1]
             let prev2 = res[res.length - 2]
+            res.push(prev1 + prev2)
+        }
+
+        if (operation === D) {
+            let prev = res[res.length - 1]
         }
     })
 };
