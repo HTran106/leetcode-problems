@@ -20,6 +20,7 @@ var calPoints = function(operations) {
 
         if (operation === D) {
             let prev = res[res.length - 1]
+            res.push(prev * 2)
         }
     })
 };
