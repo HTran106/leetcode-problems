@@ -10,15 +10,26 @@
  * @param {number} right
  * @return {number[]}
  */
-var selfDividingNumbers = function(left, right) {
-    let res = []
-    for (let i = left; i <= right; i++) {
-        let nums = i.toString().split('')
-        console.log(nums, i)
-        nums.forEach((divisor, idx) => {
-            if (i % +divisor === 0 && idx === nums.length - 1) res.push(i)
-        })
+
+function isSelfDividing(num) {
+    let n = num;
+    while (n > 0) {
+        let digit = n % 10;
+        if (digit === 0 || num % digit !== 0) {
+            return false;
+        }
+        n = Math.floor(n / 10);
     }
-    return res
+    return true;
+}
+
+var selfDividingNumbers = function(left, right) {
+    let result = [];
+    for (let i = left; i <= right; i++) {
+        if (isSelfDividing(i)) {
+            result.push(i);
+        }
+    }
+    return result;
 };
 // @lc code=end
