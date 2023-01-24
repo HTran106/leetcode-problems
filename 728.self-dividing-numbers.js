@@ -14,7 +14,9 @@ var selfDividingNumbers = function(left, right) {
     let res = []
     for (let i = left; i <= right; i++) {
         let nums = i.toString().split('')
-
+        nums.forEach((divisor, idx) => {
+            if (i % divisor === 0 && idx === nums.length - 1) res.push(i)
+        })
     }
 };
 // @lc code=end
