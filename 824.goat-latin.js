@@ -11,6 +11,14 @@
  */
 var toGoatLatin = function(sentence) {
     const words = sentence.split(' ')
-    
+    let res = []
+    words.forEach(word => {
+        if (word[0].match(/[aeiou]/i)) {
+            res.push(word + 'ma' + 'a'.repeat(res.length + 1))
+        } else {
+            res.push(word.slice(1) + word[0] + 'ma' + 'a'.repeat(res.length + 1))
+        }
+    })
+    return res.join(' ')
 };
 // @lc code=end
