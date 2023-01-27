@@ -10,7 +10,7 @@
  * @return {string}
  */
 var toGoatLatin = function(sentence) {
+    const words = sentence.split(' ')
     
 };
 // @lc code=end
-
