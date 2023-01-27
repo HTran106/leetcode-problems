@@ -11,26 +11,23 @@
  * @return {string}
  */
 var mostCommonWord = function (paragraph, banned) {
-    let words = paragraph.split(' ');
-    let currLength = 0;
-    words.map(word => {
-        word = word.replace(/[^a-zA-Z]/g, '').toLowerCase();
-        return word;
-    })
     let wordCount = {};
-    words.forEach(word => {
-        if (wordCount[word] === undefined) {
-            wordCount[word] = 1;
-        } else {
-            wordCount[word]++;
+
+    let words = paragraph.toLowerCase().split(/[^a-z]/);
+    for (let word of words) {
+        if (word.length > 0 && !banned.includes(word)) {
+            if (wordCount[word]) {
+                wordCount[word]++;
+            } else {
+                wordCount[word] = 1;
+            }
         }
-    })
-    
+    }
+
     let maxCount = 0;
     let maxWord = '';
-
     for (let word in wordCount) {
-        if (wordCount[word] > maxCount && !banned.includes(word)) {
+        if (wordCount[word] > maxCount) {
             maxCount = wordCount[word];
             maxWord = word;
         }
