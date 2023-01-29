@@ -11,20 +11,11 @@
  * @return {boolean}
  */
 var isLongPressedName = function(name, typed) {
-    let nameCharCount = {};
-    let typedCharCount = {};
-
-    for (let char of name) {
-        nameCharCount[char] = nameCharCount[char] + 1 || 1
-    }
-
-    for (let char of typed) {
-        typedCharCount[char] = typedCharCount[char] + 1 || 1
-    }
-
-    for (let key in nameCharCount) {
-        if (typedCharCount[key] < nameCharCount[key]) return false
-    }
-    return true
+    const nameArr = name.split('');
+    const typedArr = typed.split('');
+    let i = 0;
+    let j = 0;
+    while (i < nameArr.length && j < typedArr.length) {
+        
 };
 // @lc code=end
