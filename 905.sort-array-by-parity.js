@@ -12,6 +12,6 @@
 var sortArrayByParity = function(nums) {
     const evens = nums.filter(num => num % 2 === 0);
     const odds = nums.filter(num => num % 2 !== 0);
-    
+    return evens.concat(odds);
 };
 // @lc code=end
