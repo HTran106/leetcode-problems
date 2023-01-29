@@ -28,6 +28,12 @@ var isLongPressedName = function (name, typed) {
     if (i < nameArr.length) {
         return false;
     }
-    
+
+    while (j < typedArr.length) {
+        if (typedArr[j] !== nameArr[nameArr.length - 1]) {
+            return false;
+        }
+        j++;
+    }
 };
 // @lc code=end
