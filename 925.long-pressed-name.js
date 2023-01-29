@@ -35,5 +35,6 @@ var isLongPressedName = function (name, typed) {
         }
         j++;
     }
+    return true;
 };
 // @lc code=end
