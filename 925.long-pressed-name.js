@@ -26,5 +26,8 @@ var isLongPressedName = function (name, typed) {
         }
     }
     if (i < nameArr.length) {
+        return false;
+    }
+    
 };
 // @lc code=end
