@@ -18,6 +18,18 @@
  * @return {number}
  */
 var sumRootToLeaf = function(root) {
-   const paths = [];
+    const path = [];
+    const dfs = (node) => {
+        if (!node) {
+            return;
+        }
+        path.push(node.val);
+        if (!node.left && !node.right) {
+            path.push('end');
+        }
+        dfs(node.left);
+        dfs(node.right);
+        path.pop();
+    }
 };
 // @lc code=end
