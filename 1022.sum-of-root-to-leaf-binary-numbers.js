@@ -18,9 +18,6 @@
  * @return {number}
  */
 var sumRootToLeaf = function(root) {
-    if (!root) return 0
-    if (!root.left && !root.right) return root.val.toString(16)
-    return sumRootToLeaf(root.left).toString(16) + sumRootToLeaf(root.right).toString(16)
-
+   const paths = [];
 };
 // @lc code=end
