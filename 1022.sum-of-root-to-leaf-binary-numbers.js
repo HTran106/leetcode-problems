@@ -17,32 +17,24 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var sumRootToLeaf = function(root) {
+var sumRootToLeaf = function (root) {
+    const paths = [];
     const path = [];
-    const dfs = (node) => {
+    const traverse = (node, path) => {
         if (!node) {
             return;
         }
         path.push(node.val);
         if (!node.left && !node.right) {
-            path.push('end');
+            paths.push(path.slice());
         }
-        dfs(node.left);
-        dfs(node.right);
+        traverse(node.left, path);
+        traverse(node.right, path);
         path.pop();
-    }
-    dfs(root);
-    let sum = 0;
-    let i = 0;
-    while (i < path.length) {
-        let num = 0;
-        while (path[i] !== 'end') {
-            num = num * 2 + path[i];
-            i++;
-        }
-        sum += num;
-        i++;
-    }
-
+    };
+    traverse(root, path);
+    return paths.reduce((sum, path) => {
+        return sum + parseInt(path.join(''), 2);
+    }, 0);
 };
 // @lc code=end
