@@ -34,6 +34,15 @@ var sumRootToLeaf = function(root) {
     dfs(root);
     let sum = 0;
     let i = 0;
-    
+    while (i < path.length) {
+        let num = 0;
+        while (path[i] !== 'end') {
+            num = num * 2 + path[i];
+            i++;
+        }
+        sum += num;
+        i++;
+    }
+
 };
 // @lc code=end
