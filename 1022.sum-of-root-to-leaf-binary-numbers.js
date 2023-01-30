@@ -31,5 +31,9 @@ var sumRootToLeaf = function(root) {
         dfs(node.right);
         path.pop();
     }
+    dfs(root);
+    let sum = 0;
+    let i = 0;
+    
 };
 // @lc code=end
