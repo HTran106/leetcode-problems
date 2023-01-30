@@ -12,6 +12,7 @@
 var divisorGame = function(n) {
     const dp = new Array(n + 1).fill(false);
     dp[1] = false;
+    dp[2] = true;
 
 };
 // @lc code=end
