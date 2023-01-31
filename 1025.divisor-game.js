@@ -21,5 +21,6 @@ var divisorGame = function(n) {
             }
         }
     }
+    return dp[n];
 };
 // @lc code=end
