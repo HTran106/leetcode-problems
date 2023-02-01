@@ -37,7 +37,15 @@ class MinHeap {
             const parentIndex = Math.floor((index - 1) / 2);
             if (this.heap[parentIndex].val > this.heap[index].val) {
                 this.swap(parentIndex, index);
-                
+                index = parentIndex;
+            } else {
+                break;
+            }
+        }
+    }
+
+    
+
 
 var mergeKLists = function(lists) {
     const  dummy = new ListNode();
