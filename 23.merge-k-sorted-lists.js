@@ -16,10 +16,31 @@
  * @param {ListNode[]} lists
  * @return {ListNode}
  */
+
+class MinHeap {
+    constructor() {
+        
+
 var mergeKLists = function(lists) {
     const  dummy = new ListNode();
     let current = dummy;
     const heap = new MinHeap();
-    
+
+    for (let i = 0; i < lists.length; i++) {
+        if (lists[i]) {
+            heap.insert(lists[i]);
+        }
+    }
+
+    while (heap.size() > 0) {
+        const node = heap.extract();
+        current.next = node;
+        current = current.next;
+        if (node.next) {
+            heap.insert(node.next);
+        }
+    }
+
+    return dummy.next;
 };
 // @lc code=end
