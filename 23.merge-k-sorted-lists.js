@@ -49,7 +49,19 @@ class MinHeap {
         this.heap[i] = this.heap[j];
         this.heap[j] = temp;
     }
-    
+
+    extract() {
+        const min = this.heap[0];
+        const last = this.heap.pop();
+        if (this.heap.length > 0) {
+            this.heap[0] = last;
+            this.bubbleDown();
+        }
+        return min;
+    }
+
+    bubbleDown() {
+        
 
 
 
