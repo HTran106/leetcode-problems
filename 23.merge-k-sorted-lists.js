@@ -123,7 +123,6 @@ var mergeKLists = function(lists) {
             heap.insert(node.next);
         }
     }
-
     return dummy.next;
 };
 // @lc code=end
