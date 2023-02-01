@@ -87,7 +87,18 @@ class MinHeap {
                 }
             }
 
-            
+            if (swap === null) {
+                break;
+            }
+
+            this.heap[index] = this.heap[swap];
+            this.heap[swap] = element;
+            index = swap;
+        }
+    }
+}
+
+
 
 
 
