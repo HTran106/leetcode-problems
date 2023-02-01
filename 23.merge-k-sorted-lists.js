@@ -44,7 +44,14 @@ class MinHeap {
         }
     }
 
+    swap(i, j) {
+        const temp = this.heap[i];
+        this.heap[i] = this.heap[j];
+        this.heap[j] = temp;
+    }
     
+
+
 
 
 var mergeKLists = function(lists) {
