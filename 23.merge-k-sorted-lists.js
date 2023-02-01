@@ -17,7 +17,9 @@
  * @return {ListNode}
  */
 var mergeKLists = function(lists) {
+    const  dummy = new ListNode();
+    let current = dummy;
+    const heap = new MinHeap();
     
 };
 // @lc code=end
-
