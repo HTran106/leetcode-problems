@@ -19,7 +19,25 @@
 
 class MinHeap {
     constructor() {
-        
+        this.heap = [];
+    }
+
+    size() {
+        return this.heap.length;
+    }
+
+    insert(node) {
+        this.heap.push(node);
+        this.bubbleUp();
+    }
+
+    bubbleUp() {
+        let index = this.heap.length - 1;
+        while (index > 0) {
+            const parentIndex = Math.floor((index - 1) / 2);
+            if (this.heap[parentIndex].val > this.heap[index].val) {
+                this.swap(parentIndex, index);
+                
 
 var mergeKLists = function(lists) {
     const  dummy = new ListNode();
