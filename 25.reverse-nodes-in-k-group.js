@@ -21,6 +21,7 @@ var reverseKGroup = function(head, k) {
     const dummy = new ListNode(0, head);
     let prev = dummy;
     let curr = head;
+    let count = 0;
 
 };
 // @lc code=end
