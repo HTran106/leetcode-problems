@@ -19,6 +19,8 @@
  */
 
 const reverse = (prev, next) => {
+    const last = prev.next;
+    
 
 var reverseKGroup = function(head, k) {
     const dummy = new ListNode(0, head);
