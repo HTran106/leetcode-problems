@@ -23,5 +23,7 @@ var reverseKGroup = function(head, k) {
     let curr = head;
     let count = 0;
 
+    while (curr) {
+
 };
 // @lc code=end
