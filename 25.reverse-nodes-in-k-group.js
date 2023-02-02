@@ -17,6 +17,9 @@
  * @param {number} k
  * @return {ListNode}
  */
+
+const reverse = (prev, next) => {
+
 var reverseKGroup = function(head, k) {
     const dummy = new ListNode(0, head);
     let prev = dummy;
@@ -24,6 +27,14 @@ var reverseKGroup = function(head, k) {
     let count = 0;
 
     while (curr) {
-
+        count++;
+        if (count % k === 0) {
+            prev = reverse(prev, curr.next);
+            curr = prev.next;
+        } else {
+            curr = curr.next;
+        }
+    }
+    return dummy.next;
 };
 // @lc code=end
