@@ -19,6 +19,7 @@
  */
 var reverseKGroup = function(head, k) {
     const dummy = new ListNode(0, head);
-    
+    let prev = dummy;
+
 };
 // @lc code=end
