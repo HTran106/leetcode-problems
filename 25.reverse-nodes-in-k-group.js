@@ -22,7 +22,14 @@ const reverse = (prev, next) => {
     const last = prev.next;
     let curr = prev.next.next;
     while (curr !== next) {
-
+        const temp = curr.next;
+        curr.next = prev.next;
+        prev.next = curr;
+        curr = temp;
+    }
+    last.next = next;
+    return last;
+};
 
 var reverseKGroup = function(head, k) {
     const dummy = new ListNode(0, head);
