@@ -14,6 +14,7 @@ var nextGreaterElement = function (nums1, nums2) {
     const res = [];
     for (let i = 0; i < nums1.length; i++) {
         let num = nums1[i]
+        if (nums2.indexOf(num) === nums2.length - 1) res.push(-1)
         for (let j = nums2.indexOf(num) + 1; j < nums2.length; j++) {
             let num2 = nums2[j]
             if (num2 < num && j === nums2.length - 1) res.push(-1)
@@ -22,7 +23,6 @@ var nextGreaterElement = function (nums1, nums2) {
                 break
             }
         }
-        console.log(num)
     }
     return res
 };
