@@ -9,28 +9,13 @@
  * @param {string} s
  * @return {boolean}
  */
-function isPalindrome(s) {
-    let left = 0;
-    let right = s.length - 1;
-    while (left < right) {
-        if (s[left] != s[right]) {
-            return false;
-        }
-        left++;
-        right--;
-    }
-    return true;
-}
 
 var validPalindrome = function(s) {
     for (let i = 0; i < s.length; i++) {
-        let left = s.substring(0, i);
-        let right = s.substring(i + 1);
-        let str = left + right;
-        if (isPalindrome(str)) {
-            return true;
-        }
+        let temp = s.slice(0, i) + s.slice(i + 1)
+        if (temp === temp.split('').reverse().join('')) return true
+        console.log(s, temp)
     }
-    return false;
+    return false
 };
 // @lc code=end
