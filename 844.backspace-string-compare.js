@@ -10,23 +10,25 @@
  * @param {string} t
  * @return {boolean}
  */
-var backspaceCompare = function(s, t) {
-    s = s.split('')
-    t = t.split('')
-    for (let i = 0; i < s.length; i++) {
-        let char = s[i]
-        if (char === '#') {
-            s.splice(s.indexOf(char) - 1, 2)
-            i -= 2
+var backspaceCompare = function (s, t) {
+    let sArr = s.split('')
+    let tArr = t.split('')
+    let sArr2 = []
+    let tArr2 = []
+    for (let i = 0; i < sArr.length; i++) {
+        if (sArr[i] === '#') {
+            sArr2.pop()
+        } else {
+            sArr2.push(sArr[i])
         }
     }
-    for (let i = 0; i < t.length; i++) {
-        let char = t[i]
-        if (char === '#') {
-            t.splice(t.indexOf(char) - 1, 2)
-            i -= 2
+    for (let i = 0; i < tArr.length; i++) {
+        if (tArr[i] === '#') {
+            tArr2.pop()
+        } else {
+            tArr2.push(tArr[i])
         }
     }
-    return s.join('') === t.join('')
+    return sArr2.join('') === tArr2.join('')
 };
 // @lc code=end
