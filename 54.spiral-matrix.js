@@ -10,29 +10,44 @@
  * @return {number[]}
  */
 var spiralOrder = function(matrix) {
-    let res = [];
+    let result = [];
 
-    while (res.length !== matrix.flat().length) {
-        let top = matrix.splice(0, 1)
-        res = [...res, ...top.flat()]
-        // console.log(res)
-        for (let i = 0; i < matrix[0].length; i++) {
-            let right = matrix[i].splice(matrix[i].length - 1, 1)
-            res = [...res, ...right]
-            // console.log(res)
-        }
-
-        let bottom = matrix.splice(matrix.length - 1, 1).flat().reverse()
-        res = [...res, ...bottom]
-        // console.log(res)
-        for (let i = matrix.length - 1; i >= 0; i--) {
-            let left = matrix[i].splice(0, 1)
-            res = [...res, ...left]
-            console.log(matrix)
-            console.log(res)
-        }
-        if (matrix.length === 1) res = [...res, ...matrix.flat()]
+    if (matrix.length === 1) {
+        result.push(matrix[0][0])
+        return result;
     }
-    return res
+
+    let max = matrix[0].length - 1;
+
+    // Grab the first row | result.push.apply(result,matrix[0])
+    for (let i = 0; i <= max; i++) {
+        result.push(matrix[0][i]);
+    }
+
+    // Grab the last column
+    for (let i = 1; i < max; i++) {
+        result.push(matrix[i][max]);
+    }
+
+    // Grab the last row
+    for (let i = max; i >= 0; i--) {
+        result.push(matrix[max][i]);
+    }
+
+    // Grab the first column
+    for (let i = max - 1; i > 0; i--) {
+        result.push(matrix[i][0]);
+    }
+
+    let submatrix = [];
+    // Form the inner matrix
+    for (let i = 1; i < max; i++) {
+        submatrix.push(matrix[i].splice(1, max - 1));
+    }
+
+    //call it recursively
+    result = result.concat(spiralOrder(submatrix));
+
+    return result;
 };
 // @lc code=end
