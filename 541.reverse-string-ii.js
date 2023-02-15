@@ -16,7 +16,7 @@ var reverseStr = function (s, k) {
     while (i < s.length) {
         let first = s.slice(0, k + 1)
         let second = s.slice(k)
-        res += first + second
+        res += first.split('').reverse().join('') + second
         i += 2000
     }
     return res
