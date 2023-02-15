@@ -11,14 +11,18 @@
  * @return {string}
  */
 var reverseStr = function (s, k) {
-    let res = ''
-    let i = 0
+    let result = '';
+    let i = 0;
     while (i < s.length) {
-        let first = s.slice(0, k + 1)
-        let second = s.slice(k)
-        res += first.split('').reverse().join('') + second
-        i += 2000
+        let temp = s.slice(i, i + k).split('').reverse().join('');
+        result += temp;
+        i += k;
+        if (i < s.length) {
+            temp = s.slice(i, i + k);
+            result += temp;
+            i += k;
+        }
     }
-    return res
+    return result;
 };
 // @lc code=end
