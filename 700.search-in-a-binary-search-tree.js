@@ -19,9 +19,18 @@
  * @return {TreeNode}
  */
 var searchBST = function(root, val) {
-    if (root === null) return null;
-    if (root.val === val) return root;
-    if (root.val > val) return searchBST(root.left, val);
-    if (root.val < val) return searchBST(root.right, val);
+    if (!root) return null
+    const queue = [root]
+    let found = false
+    while (!found) {
+        const curr = queue.pop()
+        if (curr.val === val) {
+            return curr
+        } else {
+            if (curr.left) queue.push(curr.left)
+            if (curr.right) queue.push(curr.right)
+        }
+    }
+    return null
 };
 // @lc code=end
