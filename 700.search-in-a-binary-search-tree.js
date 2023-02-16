@@ -25,14 +25,11 @@ var searchBST = function(root, val) {
     while (!found) {
         const curr = queue.pop()
         if (curr.val === val) {
-            res.push(curr.val)
-            res.push(curr.left.val)
-            res.push(curr.right.val)
-            return res
+            return curr
         } else {
             if (curr.left) queue.push(curr.left)
+            if (curr.right) queue.push(curr.right)
         }
-
     }
 };
 // @lc code=end
