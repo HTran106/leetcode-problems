@@ -19,7 +19,7 @@
  * @return {TreeNode}
  */
 var searchBST = function(root, val) {
-    const res = []
+    if (!root) return []
     const queue = [root]
     let found = false
     while (!found) {
@@ -31,5 +31,6 @@ var searchBST = function(root, val) {
             if (curr.right) queue.push(curr.right)
         }
     }
+    return []
 };
 // @lc code=end
