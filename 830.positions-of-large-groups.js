@@ -10,8 +10,18 @@
  * @return {number[][]}
  */
 var largeGroupPositions = function(s) {
-    for (let i = 0; i < s.length; i++) {
-        let char = s[i];
+    let result = [];
+    let i = 0;
+    while (i < s.length) {
+        let j = i + 1;
+        while (j < s.length && s[j] === s[i]) {
+            j++;
+        }
+        if (j - i >= 3) {
+            result.push([i, j - 1]);
+        }
+        i = j;
     }
+    return result;
 };
 // @lc code=end
