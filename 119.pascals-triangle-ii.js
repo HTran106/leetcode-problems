@@ -15,16 +15,16 @@ var getRow = function (rowIndex) {
     const triangle = [[1], [1, 1]]
     let numRows = rowIndex
 
-    while (numRows !== 1) {
+    while (numRows - 1 !== 0) {
         const last = triangle[triangle.length - 1]
         const temp = [1]
-        for (let i = 0; i < last.length; i++) {
+        for (let i = 0; i < last.length - 1; i++) {
             temp.push(last[i] + last[i + 1])
         }
         temp.push(1)
         triangle.push(temp)
         numRows--
     }
-    return triangle[rowIndex - 1]
+    return triangle[rowIndex]
 };
 // @lc code=end
