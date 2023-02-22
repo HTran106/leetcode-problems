@@ -9,8 +9,14 @@
  * @param {number} rowIndex
  * @return {number[]}
  */
-var getRow = function(rowIndex) {
+var getRow = function (rowIndex) {
     if (rowIndex === 0) return [1]
     if (rowIndex === 1) return [1, 1]
+    const triangle = [[1], [1, 1]]
+
+    while (rowIndex !== 2) {
+        const last = triangle[triangle.length - 1]
+        
+    }
 };
 // @lc code=end
