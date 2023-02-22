@@ -13,7 +13,7 @@ var getRow = function (rowIndex) {
     if (rowIndex === 0) return [1]
     if (rowIndex === 1) return [1, 1]
     const triangle = [[1], [1, 1]]
-    const numRows = rowIndex
+    let numRows = rowIndex
 
     while (numRows !== 2) {
         const last = triangle[triangle.length - 1]
@@ -22,7 +22,9 @@ var getRow = function (rowIndex) {
             temp.push(el + last[i + 1])
         })
         temp.push(1)
-
+        triangle.push(temp)
+        numRows--
     }
+    return triangle[rowIndex]
 };
 // @lc code=end
