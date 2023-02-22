@@ -11,5 +11,6 @@
  */
 var getRow = function(rowIndex) {
     if (rowIndex === 0) return [1]
+    if (rowIndex === 1) return [1, 1]
 };
 // @lc code=end
