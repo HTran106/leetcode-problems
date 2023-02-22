@@ -16,7 +16,10 @@ var getRow = function (rowIndex) {
 
     while (rowIndex !== 2) {
         const last = triangle[triangle.length - 1]
-        
+        const temp = [1]
+        last.forEach((el, i) => {
+            
+        })
     }
 };
 // @lc code=end
