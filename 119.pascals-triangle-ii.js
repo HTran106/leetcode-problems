@@ -13,13 +13,16 @@ var getRow = function (rowIndex) {
     if (rowIndex === 0) return [1]
     if (rowIndex === 1) return [1, 1]
     const triangle = [[1], [1, 1]]
+    const numRows = rowIndex
 
-    while (rowIndex !== 2) {
+    while (numRows !== 2) {
         const last = triangle[triangle.length - 1]
         const temp = [1]
         last.forEach((el, i) => {
-            
+            temp.push(el + last[i + 1])
         })
+        temp.push(1)
+
     }
 };
 // @lc code=end
