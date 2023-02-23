@@ -13,7 +13,11 @@
 var findContentChildren = function(g, s) {
     let count = 0;
     g.forEach(el => {
-        
+        if (s.includes(el)) {
+            count++
+            s.splice(s.indexOf(el), 1)
+        }
     })
+    return count
 };
 // @lc code=end
