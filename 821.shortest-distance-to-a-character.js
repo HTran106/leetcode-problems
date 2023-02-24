@@ -16,17 +16,17 @@ var shortestToChar = function(s, c) {
         let char = s[i]
         if (char === c) res.push(0)
         else {
-            let left = i
-            let right = i
-            while (s[left] !== c || s[right] !== c) {
-                if (char[left] === c) {
+            let left = i - 1
+            let right = i + 1
+            while (left >= 0 || right < s.length) {
+                if (s[left] === c) {
                     res.push(Math.abs(i - left))
                 }
-                if (char[right] === c) {
+                if (s[right] === c) {
                     res.push(Math.abs(i - right))
                 }
-                if (left >= 0) left--
-                if (right < s.length) right++
+                left--
+                right++
             }
         }
     }
