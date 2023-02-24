@@ -18,15 +18,18 @@ var shortestToChar = function(s, c) {
         else {
             let left = i
             let right = i
-            while (char[left] !== c || char[right] !== c) {
+            while (s[left] !== c || s[right] !== c) {
                 if (char[left] === c) {
                     res.push(Math.abs(i - left))
                 }
-                if (char[right] === c)
+                if (char[right] === c) {
+                    res.push(Math.abs(i - right))
+                }
                 if (left >= 0) left--
                 if (right < s.length) right++
             }
         }
     }
+    return res
 };
 // @lc code=end
