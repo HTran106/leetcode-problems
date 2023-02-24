@@ -21,9 +21,11 @@ var shortestToChar = function(s, c) {
             while (left >= 0 || right < s.length) {
                 if (s[left] === c) {
                     res.push(Math.abs(i - left))
+                    break
                 }
                 if (s[right] === c) {
                     res.push(Math.abs(i - right))
+                    break
                 }
                 left--
                 right++
