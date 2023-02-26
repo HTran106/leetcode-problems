@@ -20,6 +20,6 @@ var sortArrayByParityII = function(nums) {
             res.push(odd.shift())
         }
     }
-
+    return res
 };
 // @lc code=end
