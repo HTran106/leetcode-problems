@@ -10,11 +10,10 @@
  * @return {number}
  */
 var lastStoneWeight = function(stones) {
-    while (stones.length !== 1) {
-        const first = Math.max(...stones)
-        stones.splice(stones.indexOf(first), 1)
-        const second = Math.max(...stones)
-        stones.splice(stones.indexOf(second), 1)
+    while (stones.length > 1) {
+        stones.sort((a, b) => b - a)
+        const first = stones.shift()
+        const second = stones.shift()
         if (first !== second) {
             stones.push(first - second)
         }
