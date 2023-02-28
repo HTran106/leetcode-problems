@@ -26,5 +26,10 @@ var getMinimumDifference = function(root) {
         if (curr.left) queue.push(curr.left)
         if (curr.right) queue.push(curr.right)
     }
+    values.sort((a, b) => a - b)
+    values.forEach((val, i) => {
+        min = Math.min(min, Math.abs(val - values[i + 1]))
+    })
+    return min
 };
 // @lc code=end
