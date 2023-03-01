@@ -29,22 +29,22 @@ finally add to that to my results array
 */
 
 var generate = function (numRows) {
-    if (numRows === 1) return [[1]]
-    if (numRows === 2) return [[1], [1,1]]
-    const res = [[1], [1,1]]
-    while (numRows - 2 !== 0) {
-        const prevRow = res[res.length - 1]
-        const temp = [1]
-        for (let i = 0; i < prevRow.length - 1; i++) {
-            let num1 = prevRow[i]
-            let num2 = prevRow[i + 1]
-            temp.push(num1 + num2)
-        }
-        temp.push(1)
-        res.push(temp)
-        numRows--
-    }
-    return res
+    // if (numRows === 1) return [[1]]
+    // if (numRows === 2) return [[1], [1,1]]
+    // const res = [[1], [1,1]]
+    // while (numRows - 2 !== 0) {
+    //     const prevRow = res[res.length - 1]
+    //     const temp = [1]
+    //     for (let i = 0; i < prevRow.length - 1; i++) {
+    //         let num1 = prevRow[i]
+    //         let num2 = prevRow[i + 1]
+    //         temp.push(num1 + num2)
+    //     }
+    //     temp.push(1)
+    //     res.push(temp)
+    //     numRows--
+    // }
+    // return res
 };
 // @lc code=end
 

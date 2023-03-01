@@ -17,7 +17,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var getMinimumDifference = function(root) {
+var getMinimumDifference = function (root) {
     const queue = [root];
     const values = [];
     while (queue.length) {
