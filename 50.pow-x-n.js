@@ -20,6 +20,8 @@ var myPow = function(x, n) {
     if (n === -1) {
         return 1 / x
     }
-    
+    let half = myPow(x, Math.floor(n / 2))
+    let rest = myPow(x, n % 2)
+    return half * half * rest
 };
 // @lc code=end
