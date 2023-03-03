@@ -10,31 +10,24 @@
  * @param {number} divisor
  * @return {number}
  */
-var divide = function(dividend, divisor) {
-    let sign = 1;
-    if (dividend < 0) {
-        sign = -sign;
-        dividend = -dividend;
+var divide = function (dividend, divisor) {
+    if (dividend === -2147483648 && divisor === -1) {
+        return 2147483647;
     }
-    if (divisor < 0) {
-        sign = -sign;
-        divisor = -divisor;
-    }
-    let result = 0;
+    let sign = (dividend < 0) ^ (divisor < 0);
+    dividend = Math.abs(dividend);
+    divisor = Math.abs(divisor);
+    let quotient = 0;
     while (dividend >= divisor) {
         let temp = divisor;
         let multiple = 1;
-        while (dividend >= temp) {
-            dividend -= temp;
-            result += multiple;
+        while (dividend >= (temp << 1)) {
             temp <<= 1;
             multiple <<= 1;
         }
+        dividend -= temp;
+        quotient += multiple;
     }
-    if (sign > 0) {
-        return Math.min(result, 2 ** 31 - 1);
-    } else {
-        return Math.max(-result, -(2 ** 31));
-    }
+    return sign ? -quotient : quotient;
 };
 // @lc code=end
