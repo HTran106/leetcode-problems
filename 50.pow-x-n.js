@@ -17,5 +17,9 @@ var myPow = function(x, n) {
     if (n === 1) {
         return x
     }
+    if (n === -1) {
+        return 1 / x
+    }
+    
 };
 // @lc code=end
