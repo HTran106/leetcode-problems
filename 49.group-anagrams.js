@@ -13,17 +13,18 @@ var groupAnagrams = function(strs) {
     let res = []
     for (let i = 0; i < strs.length; i++) {
         let word1 = [strs[i]]
+        const temp = [word1]
         let sortedWord1 = strs[i].split('')
         .sort((a, b) => a - b)
         .join('')
-        const temp = []
-
         for (let j = i + 1; j < strs.length; j++) {
-            let word2 = strs[j].split('')
+            let word2 = strs[j]
+            let sortedWord2 = strs[j].split('')
                                .sort((a, b) => a - b)
                                .join('')
-            if (word1 === word2)
+            if (word1 === word2) temp.push(word2)
         }
+        res.push(temp)
     }
 };
 // @lc code=end
