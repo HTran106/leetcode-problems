@@ -10,7 +10,11 @@
  * @return {string[][]}
  */
 var groupAnagrams = function(strs) {
-    
+    let res = []
+    for (let i = 0; i < strs.length; i++) {
+        for (let j = i + 1; j < strs.length; j++) {
+            
+        }
+    }
 };
 // @lc code=end
-
