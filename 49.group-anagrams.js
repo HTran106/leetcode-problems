@@ -11,20 +11,17 @@
  */
 var groupAnagrams = function(strs) {
     let res = []
+    let map = new Map()
     for (let i = 0; i < strs.length; i++) {
-        let word1 = strs[i]
-        const temp = [word1]
-        let sortedWord1 = strs[i].split('')
-        .sort((a, b) => a - b)
-        .join('')
-        for (let j = i + 1; j < strs.length; j++) {
-            let word2 = strs[j]
-            let sortedWord2 = strs[j].split('')
-                               .sort((a, b) => a - b)
-                               .join('')
-            if (sortedWord1 === sortedWord2) temp.push(word2)
+        let str = strs[i]
+        let sorted = str.split('').sort().join('')
+        if (map.has(sorted)) {
+            let index = map.get(sorted)
+            res[index].push(str)
+        } else {
+            res.push([str])
+            map.set(sorted, res.length - 1)
         }
-        res.push(temp)
     }
     return res
 };
