@@ -14,14 +14,13 @@ var myPow = function(x, n) {
     if (n === 0) {
         return 1
     }
-    if (n === 1) {
-        return x
+    if (n < 0) {
+        return 1 / myPow(x, -n)
     }
-    if (n === -1) {
-        return 1 / x
+    if (n % 2 === 0) {
+        return myPow(x * x, n / 2)
+    } else {
+        return x * myPow(x, n - 1)
     }
-    let half = myPow(x, Math.floor(n / 2))
-    let rest = myPow(x, n % 2)
-    return half * half * rest
 };
 // @lc code=end
