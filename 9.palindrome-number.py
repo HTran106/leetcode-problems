@@ -11,5 +11,7 @@ class Solution:
             return False
         elif x == 0:
             return True
+        else:
+            return str(x) == str(x)[::-1]
 
 # @lc code=end
