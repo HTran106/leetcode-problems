@@ -27,6 +27,7 @@ class Solution(object):
                         stack.pop()
                     else:
                         return False
+        return len(stack) == 0
 
 
 # @lc code=end
