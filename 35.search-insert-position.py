@@ -14,5 +14,10 @@ class Solution(object):
         """
         if target in nums:
             return nums.index(target)
+        else:
+            for i in range(len(nums)):
+                if target < nums[i]:
+                    return i
+            return len(nums)
 
 # @lc code=end
