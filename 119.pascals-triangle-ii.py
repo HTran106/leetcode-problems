@@ -13,5 +13,7 @@ class Solution(object):
         """
         if rowIndex == 0:
             return [1]
+        elif rowIndex == 1:
+            return [1, 1]
 
 # @lc code=end
