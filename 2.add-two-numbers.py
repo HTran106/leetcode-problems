@@ -34,4 +34,7 @@ class Solution(object):
             curr = curr.next
             carry //= 10
 
+        return head.next
+    
+
 # @lc code=end
