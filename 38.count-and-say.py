@@ -21,7 +21,7 @@ class Solution(object):
         # 7. Set the current string to the next string
         # 8. Return the current string
 
-        
+
 
 
 # @lc code=end
