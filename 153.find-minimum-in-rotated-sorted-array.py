@@ -15,7 +15,15 @@ class Solution(object):
         if len(nums) == 1:
             return nums[0]
 
+        left, right = 0, len(nums) - 1
+        while left < right:
+            mid = left + (right - left) // 2
+            if nums[mid] > nums[right]:
+                left = mid + 1
+            else:
+                right = mid
 
+        return nums[left]
 
 
 # @lc code=end
