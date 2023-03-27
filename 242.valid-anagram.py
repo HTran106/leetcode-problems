@@ -16,4 +16,6 @@ class Solution(object):
         if len(s) != len(t):
             return False
 
+        return sorted(s) == sorted(t)
+
 # @lc code=end
