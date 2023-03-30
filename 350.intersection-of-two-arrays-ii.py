@@ -19,6 +19,8 @@ class Solution(object):
         i = j = 0
         result = []
         while i < len(nums1) and j < len(nums2):
-            
+            if nums1[i] == nums2[j]:
+                results.append(nums1[i])
+
 
 # @lc code=end
