@@ -27,7 +27,8 @@ class Solution(object):
                 i += 1
             else:
                 j += 1
-                
+
+        return result
 
 
 # @lc code=end
