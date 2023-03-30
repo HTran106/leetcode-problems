@@ -17,5 +17,8 @@ class Solution(object):
         nums2.sort()
 
         i = j = 0
-        
+        result = []
+        while i < len(nums1) and j < len(nums2):
+            
+
 # @lc code=end
