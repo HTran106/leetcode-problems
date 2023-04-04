@@ -21,5 +21,7 @@ class Solution(object):
             l, r = i + 1, len(nums) - 1
             while l < r:
                 s = nums[i] + nums[l] + nums[r]
+                if s == target:
+                    return target
 
 # @lc code=end
