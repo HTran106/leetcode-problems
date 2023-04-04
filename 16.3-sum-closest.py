@@ -16,18 +16,18 @@ class Solution(object):
         nums.sort()
         closest = None
         for i in range(len(nums) - 2):
-            if i > 0 and nums[i] == nums[i - 1];
-                continue
-            l, r = i + 1, len(nums) - 1
-            while l < r:
-                s = nums[i] + nums[l] + nums[r]
-                if s == target:
-                    return target
+            j = i + 1
+            k = len(nums) - 1
+            while j < k:
+                s = nums[i] + nums[j] + nums[k]
                 if closest is None or abs(s - target) < abs(closest - target):
                     closest = s
                 if s < target:
-                    l += 1
+                    j += 1
+                elif s > target:
+                    k -= 1
                 else:
-                    r -= 1
+                    return target
+        return closest
 
 # @lc code=end
