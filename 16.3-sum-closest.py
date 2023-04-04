@@ -19,5 +19,7 @@ class Solution(object):
             if i > 0 and nums[i] == nums[i - 1];
                 continue
             l, r = i + 1, len(nums) - 1
+            while l < r:
+                s = nums[i] + nums[l] + nums[r]
 
 # @lc code=end
