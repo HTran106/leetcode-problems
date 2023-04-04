@@ -23,5 +23,11 @@ class Solution(object):
                 s = nums[i] + nums[l] + nums[r]
                 if s == target:
                     return target
+                if closest is None or abs(s - target) < abs(closest - target):
+                    closest = s
+                if s < target:
+                    l += 1
+                else:
+                    r -= 1
 
 # @lc code=end
