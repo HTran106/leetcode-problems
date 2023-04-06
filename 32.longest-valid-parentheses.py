@@ -22,4 +22,16 @@ class Solution(object):
                 else:
                     stack.append(i)
 
+        if len(stack) == 0:
+            return len(s)
+
+        max_len = 0
+        a = len(s)
+        while len(stack) > 0:
+            b = stack.pop()
+            max_len = max(max_len, a - b - 1)
+            a = b
+        max_len = max(max_len, a)
+
+        return max_len
 # @lc code=end
