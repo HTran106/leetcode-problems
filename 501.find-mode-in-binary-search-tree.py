@@ -31,46 +31,6 @@ class Solution(object):
         max_count = max(count.values())
         return [k for k, v in count.items() if v == max_count]
 
-        # Approach 2: Morris Traversal
-        # Time  complexity: O(n)
-        # Space complexity: O(1)
-        # def dfs(node):
-        #     if node:
-        #         dfs(node.left)
-        #         if node.val == cur[0]:
-        #             cur[1] += 1
-        #         else:
-        #             cur[0], cur[1] = node.val, 1
-        #         if cur[1] == max_count[0]:
-        #             mode.append(cur[0])
-        #         elif cur[1] > max_count[0]:
-        #             max_count[0], mode[0] = cur[1], cur[0]
-        #         dfs(node.right)
-        # cur = [None, 0]
-        # max_count = [0]
-        # mode = []
-        # dfs(root)
-        # return mode
-
-        # Approach 3: Inorder Traversal
-        # Time  complexity: O(n)
-        # Space complexity: O(n)
-        # def dfs(node):
-        #     if node:
-        #         dfs(node.left)
-        #         if node.val == cur[0]:
-        #             cur[1] += 1
-        #         else:
-        #             cur[0], cur[1] = node.val, 1
-        #         if cur[1] == max_count[0]:
-        #             mode.append(cur[0])
-        #         elif cur[1] > max_count[0]:
-        #             max_count[0], mode[0] = cur[1], cur[0]
-        #         dfs(node.right)
-        # cur = [None, 0]
-        # max_count = [0]
-        # mode = []
-        # dfs(root)
-        # return mode
+       
 
 # @lc code=end
