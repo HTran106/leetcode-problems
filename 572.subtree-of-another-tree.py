@@ -28,6 +28,11 @@ class Solution(object):
                 return False
             return isSameTree(root.left, subRoot.left) and isSameTree(root.right, subRoot.right)
 
+        if not root:
+            return False
+        if isSameTree(root, subRoot):
+            return True
+        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 
 
 # @lc code=end
