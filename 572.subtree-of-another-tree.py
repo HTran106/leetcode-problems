@@ -19,7 +19,15 @@ class Solution(object):
         :rtype: bool
         """
 
-        
+        def isSameTree(root, subRoot):
+            if not root and not subRoot:
+                return True
+            if not root or not subRoot:
+                return False
+            if root.val != subRoot.val:
+                return False
+            return isSameTree(root.left, subRoot.left) and isSameTree(root.right, subRoot.right)
+
 
 
 # @lc code=end
