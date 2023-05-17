@@ -30,14 +30,31 @@ once found, return the index of the 2 elements from original nums array
 // [3, 3]
 
 var twoSum = function (nums, target) {
+    // let i = 0
+    // let j = nums.length - 1
+    // let copy = [...nums]
+    // copy = copy.sort((a, b) => a - b)
+    // while (i < j) {
+    //     let num1 = copy[i]
+    //     let num2 = copy[j]
+    //     if (num1 + num2 === target) return [nums.indexOf(num1), nums.lastIndexOf(num2)]
+    //     if (num1 + num2 > target) j--
+    //     else i++
+    // }
+    // return []
+    // for (let i = 0; i < nums.length; i++) {
+    //     let num1 = nums[i]
+    //     for (let j = i + 1; j < nums.lenght; j++) {
+    //         let num2 = nums[j]
+    //         if (num1 + num2 === target) return [i, j]
+    // }
+    nums.sort((a, b) => a - b)
     let i = 0
     let j = nums.length - 1
-    let copy = [...nums]
-    copy = copy.sort((a, b) => a - b)
     while (i < j) {
-        let num1 = copy[i]
-        let num2 = copy[j]
-        if (num1 + num2 === target) return [nums.indexOf(num1), nums.lastIndexOf(num2)]
+        let num1 = nums[i]
+        let num2 = nums[j]
+        if (num1 + num2 === target) return [i, j]
         if (num1 + num2 > target) j--
         else i++
     }
