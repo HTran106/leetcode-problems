@@ -11,5 +11,6 @@
  */
 var dayOfYear = function(date) {
     const [year, month, day] = date.split('-').map(Number);
+    const isLeapYear = year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
 };
 // @lc code=end
