@@ -20,6 +20,13 @@ var numPrimeArrangements = function(n) {
             }
         }
     }
+    let primeCount = 0;
+    for (let i = 2; i <= n; i++) {
+        if (isPrime[i]) {
+            primeCount++;
+        }
+    }
     
+
 };
 // @lc code=end
