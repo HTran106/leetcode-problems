@@ -26,7 +26,12 @@ var numPrimeArrangements = function(n) {
             primeCount++;
         }
     }
+    let res = 1;
+    for (let i = 2; i <= primeCount; i++) {
+        res = res * i % MOD;
+    }
     
+
 
 };
 // @lc code=end
