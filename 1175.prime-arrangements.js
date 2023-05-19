@@ -30,7 +30,10 @@ var numPrimeArrangements = function(n) {
     for (let i = 2; i <= primeCount; i++) {
         res = res * i % MOD;
     }
-    
+    for (let i = 2; i <= n - primeCount; i++) {
+        res = res * i % MOD;
+    }
+    return res;
 
 
 };
