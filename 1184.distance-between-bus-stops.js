@@ -21,5 +21,6 @@ var distanceBetweenBusStops = function(distance, start, destination) {
     for (let i = start; i !== destination; i = (i - 1 + n) % n) {
         counterclockwise += distance[(i - 1 + n) % n];
     }
+    return Math.min(clockwise, counterclockwise);
 };
 // @lc code=end
