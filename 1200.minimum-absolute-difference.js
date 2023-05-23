@@ -12,6 +12,7 @@
 var minimumAbsDifference = function(arr) {
     const res = [];
     arr.sort((a, b) => a - b);
+    let minDiff = Infinity;
     
 };
 // @lc code=end
