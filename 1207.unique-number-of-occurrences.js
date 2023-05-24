@@ -21,5 +21,6 @@ var uniqueOccurrences = function(arr) {
         }
         set.add(map[key]);
     }
+    return true;
 };
 // @lc code=end
