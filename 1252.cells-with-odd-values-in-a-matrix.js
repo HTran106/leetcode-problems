@@ -26,5 +26,6 @@ var oddCells = function(m, n, indices) {
             }
         }
     }
+    return res;
 };
 // @lc code=end
