@@ -18,6 +18,13 @@ var oddCells = function(m, n, indices) {
         row[indices[i][0]]++;
         col[indices[i][1]]++;
     }
-    
+    let res = 0;
+    for (let i = 0; i < m; i++) {
+        for (let j = 0;j < n; j++) {
+            if ((row[i] + col[j]) % 2 === 1) {
+                res++;
+            }
+        }
+    }
 };
 // @lc code=end
