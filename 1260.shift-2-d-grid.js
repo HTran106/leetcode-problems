@@ -21,6 +21,6 @@ var shiftGrid = function(grid, k) {
             res[newI][newJ] = grid[i][j];
         }
     }
-
+    return res;
 };
 // @lc code=end
