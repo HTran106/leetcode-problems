@@ -14,6 +14,10 @@
 var oddCells = function(m, n, indices) {
     const row = new Array(m).fill(0);
     const col = new Array(n).fill(0);
+    for (let i = 0; i < indices.length; i++) {
+        row[indices[i][0]]++;
+        col[indices[i][1]]++;
+    }
     
 };
 // @lc code=end
