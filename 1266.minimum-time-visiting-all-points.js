@@ -17,5 +17,6 @@ var minTimeToVisitAllPoints = function(points) {
         const dy = Math.abs(points[i][1] - points[i - 1][1]);
         res += Math.max(dx, dy);
     }
+    return res;
 };
 // @lc code=end
