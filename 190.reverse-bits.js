@@ -19,5 +19,4 @@ var reverseBits = function (n) {
 };
 
 
-reverseBits(00000010100101000001111010011100)
 // @lc code=end
