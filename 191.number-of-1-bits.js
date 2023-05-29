@@ -10,6 +10,8 @@
  * @return {number}
  */
 var hammingWeight = function(n) {
-
+    const str = n.toString(2)
+    let count = 0
+    
 };
 // @lc code=end
