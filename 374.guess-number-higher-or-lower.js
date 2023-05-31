@@ -18,7 +18,14 @@
  * @param {number} n
  * @return {number}
  */
+
+let guess = (num) => {
+    if (num === 6) return 0
+    if (num > 6) return -1
+    if (num < 6) return 1
+}
+
 var guessNumber = function(n) {
-    return guess(num)
+    return guess(n)
 };
 // @lc code=end
