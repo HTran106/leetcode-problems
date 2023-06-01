@@ -12,17 +12,11 @@
  * @return {number}
  */
 var maxCount = function(m, n, ops) {
-    const result = []
-    for (let i = 0; i < m; i++) {
-        result.push(new Array(n).fill(0))
-    }
+    let minM = m
+    let minN = n
     for (let i = 0; i < ops.length; i++) {
-        for (let j = 0; j < ops[i][0]; j++) {
-            for (let k = 0; k < ops[i][1]; k++) {
-                result[j][k]++
-            }
-        }
+        if (ops[i][0] < minM) minM = ops[i][0]
+        if (ops[i][1] < minN) minN = ops[i][1]
     }
-    
 };
 // @lc code=end
