@@ -18,5 +18,6 @@ var maxCount = function(m, n, ops) {
         if (ops[i][0] < minM) minM = ops[i][0]
         if (ops[i][1] < minN) minN = ops[i][1]
     }
+    return minM * minN
 };
 // @lc code=end
