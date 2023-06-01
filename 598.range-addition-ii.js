@@ -16,6 +16,13 @@ var maxCount = function(m, n, ops) {
     for (let i = 0; i < m; i++) {
         result.push(new Array(n).fill(0))
     }
+    for (let i = 0; i < ops.length; i++) {
+        for (let j = 0; j < ops[i][0]; j++) {
+            for (let k = 0; k < ops[i][1]; k++) {
+                result[j][k]++
+            }
+        }
+    }
     
 };
 // @lc code=end
