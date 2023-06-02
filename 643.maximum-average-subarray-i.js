@@ -11,15 +11,14 @@
  * @return {number}
  */
 var findMaxAverage = function(nums, k) {
-    const map = {}
+    const set = new Set()
     let max = -Infinity
-    for (let i = 0; i < nums.length; i++) {
-        if (i < k) {
-            map[i] = nums[i]
-        } else {
-            map[i] = map[i - 1] + nums[i] - nums[i - k]
+    for (let i = 0; i < nums.length - k + 1; i++) {
+        let sum = 0
+        for (let j = i; j < i + k; j++) {
+            sum += nums[j]
         }
-        if (map[i] > max) max = map[i]
+        if (sum > max) max = sum
     }
     return max / k
 };
