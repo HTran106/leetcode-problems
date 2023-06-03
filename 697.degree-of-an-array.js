@@ -18,5 +18,13 @@ var findShortestSubArray = function(nums) {
         else map.set(nums[i], map.get(nums[i]) + 1)
         if (map.get(nums[i]) > max) max = map.get(nums[i])
     }
+    for (let [key, value] of map) {
+        if (value === max) {
+            let first = nums.indexOf(key)
+            let last = nums.lastIndexOf(key)
+            if (last - first + 1 < min) min = last - first + 1
+        }
+    }
+    return min
 };
 // @lc code=end
