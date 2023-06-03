@@ -18,6 +18,9 @@ var findShortestSubArray = function(nums) {
         if (map[nums[i]] > max) max = map[nums[i]]
     }
     const arr = []
+    for (let key in map) {
+        if (map[key] === max) arr.push(key)
+    }
     
 };
 // @lc code=end
