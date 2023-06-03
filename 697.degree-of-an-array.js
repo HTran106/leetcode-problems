@@ -21,6 +21,11 @@ var findShortestSubArray = function(nums) {
     for (let key in map) {
         if (map[key] === max) arr.push(key)
     }
-    
+    let min = Infinity
+    for (let i = 0; i < arr.length; i++) {
+        const first = nums.indexOf(arr[i])
+        const last = nums.lastIndexOf(arr[i])
+        if (last - first + 1 < min) min = last - first + 1
+    }
 };
 // @lc code=end
