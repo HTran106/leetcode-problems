@@ -10,22 +10,13 @@
  * @return {number}
  */
 var findShortestSubArray = function(nums) {
-    const map = {}
+    let map = new Map()
     let max = 0
-    for (let i = 0; i < nums.length; i++) {
-        if (!map[nums[i]]) map[nums[i]] = 1
-        else map[nums[i]]++
-        if (map[nums[i]] > max) max = map[nums[i]]
-    }
-    const arr = []
-    for (let key in map) {
-        if (map[key] === max) arr.push(key)
-    }
     let min = Infinity
-    for (let i = 0; i < arr.length; i++) {
-        const first = nums.indexOf(arr[i])
-        const last = nums.lastIndexOf(arr[i])
-        if (last - first + 1 < min) min = last - first + 1
+    for (let i = 0; i < nums.length; i++) {
+        if (!map.has(nums[i])) map.set(nums[i], 1)
+        else map.set(nums[i], map.get(nums[i]) + 1)
+        if (map.get(nums[i]) > max) max = map.get(nums[i])
     }
 };
 // @lc code=end
