@@ -28,5 +28,6 @@ var validPalindrome = function(s) {
         i++
         j--
     }
+    return true
 };
 // @lc code=end
