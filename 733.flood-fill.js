@@ -25,5 +25,9 @@ var floodFill = function(image, sr, sc, color) {
         dfs(r, c + 1);
         dfs(r, c - 1);
     }
+
+    dfs(sr, sc);
+
+    return image;
 };
 // @lc code=end
