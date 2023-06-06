@@ -10,7 +10,7 @@
  * @param {number} right
  * @return {number}
  */
-var countPrimeSetBits = function(left, right) {
+var countPrimeSetBits = function (left, right) {
     const isPrime = (num) => {
         if (num === 1) return false;
         if (num === 2) return true;
@@ -25,5 +25,7 @@ var countPrimeSetBits = function(left, right) {
         const bits = i.toString(2).split('').filter(b => b === '1').length;
         if (isPrime(bits)) count++;
     }
+
+    return count;
 };
 // @lc code=end
