@@ -19,6 +19,11 @@ var countPrimeSetBits = function(left, right) {
         }
         return true;
     }
-    
+
+    let count = 0;
+    for (let i = left; i <= right; i++) {
+        const bits = i.toString(2).split('').filter(b => b === '1').length;
+        if (isPrime(bits)) count++;
+    }
 };
 // @lc code=end
