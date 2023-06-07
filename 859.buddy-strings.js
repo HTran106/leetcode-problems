@@ -11,9 +11,10 @@
  * @return {boolean}
  */
 var buddyStrings = function (s, goal) {
-    [a, b] = s.split('')
-    if ((b + a) === goal) return true
-    return false
+    const sLen = s.length;
+    const goalLen = goal.length;
+
+    if (sLen !== goalLen) return false;
 };
 
 // @lc code=end
