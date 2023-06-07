@@ -22,7 +22,12 @@ var buddyStrings = function (s, goal) {
     }
 
     const diff = [];
-    
+    for (let i = 0; i < sLen; i++) {
+        if (s[i] !== goal[i]) diff.push(i);
+    }
+
+    return diff.length === 2 && s[diff[0]] === goal[diff[1]] && s[diff[1]] === goal[diff[0]];
+
 };
 
 // @lc code=end
