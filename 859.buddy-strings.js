@@ -15,6 +15,14 @@ var buddyStrings = function (s, goal) {
     const goalLen = goal.length;
 
     if (sLen !== goalLen) return false;
+
+    if (s === goal) {
+        const set = new Set(s.split(''));
+        return set.size < sLen;
+    }
+
+    const diff = [];
+    
 };
 
 // @lc code=end
