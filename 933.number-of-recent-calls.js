@@ -15,12 +15,56 @@ var RecentCounter = function() {
  * @return {number}
  */
 RecentCounter.prototype.ping = function(t) {
-    let count = 0;
-    for (let i = 0; i < this.ping.length; i++) {
-        if (t - this.pings[i] <= 3000) count++;
+    function TreeNode(val) {
+        this.val = val;
+        this.left = this.right = null;
     }
-    this.pings.push(t);
-    return count;
+
+    function BST() {
+        this.root = null;
+    }
+
+    BST.prototype.insert = function(val) {
+        const newNode = new TreeNode(val);
+        if (!this.root) {
+            this.root = newNode;
+            return this;
+        }
+        let current = this.root;
+        while (true) {
+            if (val === current.val) return undefined;
+            if (val < current.val) {
+                if (!current.left) {
+                    current.left = newNode;
+                    return this;
+                }
+                current = current.left;
+            } else {
+                if (!current.right) {
+                    current.right = newNode;
+                    return this;
+                }
+                current = current.right;
+            }
+        }
+    }
+
+    BST.prototype.contains = function(val) {
+        if (!this.root) return false;
+        let current = this.root;
+        while (current) {
+            if (val === current.val) return true;
+            if (val < current.val) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+        return false;
+    }
+
+    BST.prototype.bfs = function() {
+        
 };
 
 /**
