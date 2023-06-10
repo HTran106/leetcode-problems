@@ -16,7 +16,11 @@ var RecentCounter = function() {
  */
 RecentCounter.prototype.ping = function(t) {
     let count = 0;
-    
+    for (let i = 0; i < this.ping.length; i++) {
+        if (t - this.pings[i] <= 3000) count++;
+    }
+    this.pings.push(t);
+    return count;
 };
 
 /**
