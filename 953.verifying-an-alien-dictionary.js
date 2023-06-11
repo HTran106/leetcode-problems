@@ -27,5 +27,11 @@ var isAlienSorted = function(words, order) {
         }
         return a.length - b.length;
     }
+
+    for (let i = 1; i < words.length; i++) {
+        if (compare(words[i - 1], words[i]) > 0) return false;
+    }
+
+    return true;
 };
 // @lc code=end
