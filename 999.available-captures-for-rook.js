@@ -10,6 +10,9 @@
  * @return {number}
  */
 var numRookCaptures = function(board) {
-    
+    const row = board.length;
+    const col = board[0].length;
+    let rookRow = 0;
+    let rookCol = 0;
 };
 // @lc code=end
