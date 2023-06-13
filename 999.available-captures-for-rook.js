@@ -50,7 +50,14 @@ var numRookCaptures = function(board) {
         }
     }
 
-    
+    for (let c = rookCol; c < col; c++) {
+        if (board[rookRow][c] === 'B') break;
+        if (board[rookRow][c] === 'p') {
+            count++;
+            break;
+        }
+    }
 
+    return count;
 };
 // @lc code=end
