@@ -34,6 +34,23 @@ var numRookCaptures = function(board) {
         }
     }
 
+    for (let r = rookRow; r < row; r++) {
+        if (board[r][rookCol] === 'B') break;
+        if (board[r][rookCol] === 'p') {
+            count++;
+            break;
+        }
+    }
+
+    for (let c = rookCol; c >= 0; c--) {
+        if (board[rookRow][c] === 'B') break;
+        if (board[rookRow][c] === 'p') {
+            count++;
+            break;
+        }
+    }
+
     
+
 };
 // @lc code=end
