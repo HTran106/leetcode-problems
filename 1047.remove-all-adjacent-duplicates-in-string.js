@@ -10,14 +10,14 @@
  * @return {string}
  */
 var removeDuplicates = function(s) {
+    const stack = [];
     for (let i = 0; i < s.length; i++) {
-        let char = s[i]
-
-        if (char === s[i + 1]) {
-            s = s.slice(0, i) + s.slice(i + 2)
-            i = -1
+        if (stack.length && stack[stack.length - 1] === s[i]) {
+            stack.pop();
+        } else {
+            stack.push(s[i]);
         }
     }
-    return s
+    return stack.join('');
 };
 // @lc code=end
