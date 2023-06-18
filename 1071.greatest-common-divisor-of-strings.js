@@ -19,5 +19,8 @@ var gcdOfStrings = function(str1, str2) {
     }
     const len = gcd(str1Len, str2Len);
     const str = str1.slice(0, len);
+
+    if (str.repeat(str1Len / len) === str1 && str.repeat(str2Len / len) === str2) return str;
+    return '';
 };
 // @lc code=end
