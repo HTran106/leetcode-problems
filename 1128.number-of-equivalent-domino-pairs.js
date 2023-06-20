@@ -9,9 +9,21 @@
  * @param {number[][]} dominoes
  * @return {number}
  */
-var numEquivDominoPairs = function(dominoes) {
+var numEquivDominoPairs = function (dominoes) {
     const map = {};
     let count = 0;
-    
+
+    for (let i = 0; i < dominoes.length; i++) {
+        const [a, b] = dominoes[i].sort((a, b) => a - b);
+        const key = `${a}-${b}`;
+        if (map[key]) {
+            count += map[key];
+            map[key]++;
+        } else {
+            map[key] = 1;
+        }
+    }
+
+    return count;
 };
 // @lc code=end
