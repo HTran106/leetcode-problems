@@ -10,6 +10,12 @@
  * @return {number}
  */
 var findNumbers = function(nums) {
-    const 
+    const even = nums.filter(num => {
+        const str = num.toString();
+        return str.length % 2 === 0;
+    }
+    );
+    return even.length;
+    
 };
 // @lc code=end
