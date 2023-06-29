@@ -10,6 +10,24 @@
  * @return {number[]}
  */
 var sortByBits = function(arr) {
-    const 
+    const countBits = (num) => {
+        let count = 0;
+        while (num > 0) {
+            if (num % 2 === 1) {
+                count++;
+            }
+            num = Math.floor(num / 2);
+        }
+        return count;
+    }
+    return arr.sort((a, b) => {
+        const countA = countBits(a);
+        const countB = countBits(b);
+        if (countA === countB) {
+            return a - b;
+        }
+        return countA - countB;
+    });
+    
 };
 // @lc code=end
