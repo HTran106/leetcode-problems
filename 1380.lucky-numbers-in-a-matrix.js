@@ -31,6 +31,14 @@ var luckyNumbers  = function(matrix) {
         }
         maxCol.push(max);
     }
-    
+
+    const result = [];
+    for (let i = 0; i < m; i++) {
+        if (maxCol.includes(minRow[i])) {
+            result.push(minRow[i]);
+        }
+    }
+
+    return result;
 };
 // @lc code=end
