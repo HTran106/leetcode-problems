@@ -22,6 +22,7 @@ var findLucky = function(arr) {
             result = Math.max(result, map[key]);
         }
     }
-    
+
+    return result;
 };
 // @lc code=end
