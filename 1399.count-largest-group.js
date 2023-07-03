@@ -9,6 +9,16 @@
  * @param {number} n
  * @return {number}
  */
+const sumOfDigits = (n) => {
+    let sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n = Math.floor(n / 10);
+    }
+    return sum;
+}
+
+
 var countLargestGroup = function(n) {
     const map = {};
     let max = 0;
@@ -20,6 +30,12 @@ var countLargestGroup = function(n) {
         max = Math.max(max, map[sum]);
     }
 
-    
+    for (let key in map) {
+        if (map[key] === max) {
+            count++;
+        }
+    }
+
+    return count;
 };
 // @lc code=end
