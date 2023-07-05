@@ -11,6 +11,11 @@
  */
 var stringMatching = function(words) {
     const result = [];
+    const map = new Map();
+    for (let i = 0; i < words.length; i++) {
+        map.set(words[i], (map.get(words[i]) || 0) + 1);
+    }
+    const sortedKeys = [...map.keys()].sort((a, b) => b.length - a.length);
     
 };
 // @lc code=end
