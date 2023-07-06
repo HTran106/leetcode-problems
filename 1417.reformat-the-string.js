@@ -41,6 +41,12 @@ var reformat = function(s) {
     if (i < letters.length) {
         result.push(letters[i]);
     }
-    
+
+    if (j < numbers.length) {
+        result.push(numbers[j]);
+    }
+
+    return result.join('');
+
 };
 // @lc code=end
