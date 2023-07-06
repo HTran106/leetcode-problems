@@ -24,6 +24,23 @@ var reformat = function(s) {
     if (Math.abs(letters.length - numbers.length) > 1) {
         return '';
     }
+
+    const result = [];
+    let i = 0;
+    let j = 0;
+    let isLetter = letters.length > numbers.length;
+    while (i < letters.length && j < numbers.length) {
+        if (isLetter) {
+            result.push(letters[i++]);
+        } else {
+            result.push(numbers[j++]);
+        }
+        isLetter = !isLetter;
+    }
+
+    if (i < letters.length) {
+        result.push(letters[i]);
+    }
     
 };
 // @lc code=end
