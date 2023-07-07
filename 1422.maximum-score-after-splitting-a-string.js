@@ -31,6 +31,7 @@ var maxScore = function(s) {
     for (let i = 0; i < s.length - 1; i++) {
         result = Math.max(result, left[i] + right[i + 1]);
     }
-    
+
+    return result;
 };
 // @lc code=end
