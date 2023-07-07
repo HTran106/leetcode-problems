@@ -26,5 +26,11 @@ var maxScore = function(s) {
             right[i] += right[i + 1];
         }
     }
+
+    let result = 0;
+    for (let i = 0; i < s.length - 1; i++) {
+        result = Math.max(result, left[i] + right[i + 1]);
+    }
+    
 };
 // @lc code=end
