@@ -12,6 +12,11 @@
  */
 var kLengthApart = function(nums, k) {
     const ones = [];
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === 1) {
+            ones.push(i);
+        }
+    }
     
 };
 // @lc code=end
