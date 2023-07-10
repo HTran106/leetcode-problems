@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {number}
  */
-var maxPower = function(s) {
+var maxPower = function (s) {
     const result = [];
     let current = s[0];
     let count = 1;
@@ -23,6 +23,6 @@ var maxPower = function(s) {
         }
     }
     result.push(count);
-    
+    return Math.max(...result);
 };
 // @lc code=end
