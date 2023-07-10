@@ -17,6 +17,11 @@ var kLengthApart = function(nums, k) {
             ones.push(i);
         }
     }
-    
+    for (let i = 1; i < ones.length; i++) {
+        if (ones[i] - ones[i - 1] <= k) {
+            return false;
+        }
+    }
+    return true;
 };
 // @lc code=end
