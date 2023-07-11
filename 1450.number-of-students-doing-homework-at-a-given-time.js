@@ -13,6 +13,11 @@
  */
 var busyStudent = function(startTime, endTime, queryTime) {
     const result = [];
-    
+    for (let i = 0; i < startTime.length; i++) {
+        if (startTime[i] <= queryTime && endTime[i] >= queryTime) {
+            result.push(i);
+        }
+    }
+    return result.length;
 };
 // @lc code=end
