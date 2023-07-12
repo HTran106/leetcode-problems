@@ -11,7 +11,13 @@
  * @return {boolean}
  */
 var canBeEqual = function(target, arr) {
+    let result = true;
     const map = {};
+
+    for (let i = 0; i < target.length; i++) {
+        const num = target[i];
+        map[num] = map[num] ? map[num] + 1 : 1;
+    }
     
 };
 // @lc code=end
