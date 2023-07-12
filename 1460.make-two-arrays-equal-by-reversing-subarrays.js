@@ -27,6 +27,7 @@ var canBeEqual = function(target, arr) {
         }
         map[num]--;
     }
-    
+
+    return result;
 };
 // @lc code=end
