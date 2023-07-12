@@ -18,6 +18,15 @@ var canBeEqual = function(target, arr) {
         const num = target[i];
         map[num] = map[num] ? map[num] + 1 : 1;
     }
+
+    for (let i = 0; i < arr.length; i++) {
+        const num = arr[i];
+        if (!map[num]) {
+            result = false;
+            break;
+        }
+        map[num]--;
+    }
     
 };
 // @lc code=end
