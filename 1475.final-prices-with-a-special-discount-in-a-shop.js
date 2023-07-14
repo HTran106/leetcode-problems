@@ -21,5 +21,6 @@ var finalPrices = function(prices) {
         }
         result.push(prices[i] - discount);
     }
+    return result;
 };
 // @lc code=end
