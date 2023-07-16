@@ -14,5 +14,6 @@ var average = function(salary) {
     const min = sorted[0];
     const max = sorted[sorted.length - 1];
     const sum = sorted.reduce((acc, cur) => acc + cur, 0);
+    return (sum - min - max) / (sorted.length - 2);
 };
 // @lc code=end
