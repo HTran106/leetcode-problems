@@ -19,5 +19,6 @@ var canMakeArithmeticProgression = function(arr) {
             break;
         }
     }
+    return result;
 };
 // @lc code=end
