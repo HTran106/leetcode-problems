@@ -11,6 +11,13 @@
  */
 var canMakeArithmeticProgression = function(arr) {
     const sorted = arr.sort((a, b) => a - b);
-    
+    const diff = sorted[1] - sorted[0];
+    let result = true;
+    for (let i = 2; i < sorted.length; i++) {
+        if (sorted[i] - sorted[i - 1] !== diff) {
+            result = false;
+            break;
+        }
+    }
 };
 // @lc code=end
