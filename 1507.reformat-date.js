@@ -24,5 +24,10 @@ var reformatDate = function(date) {
         Nov: '11',
         Dec: '12',
     };
+    const [day, month, year] = date.split(' ');
+    const dayNum = day.slice(0, day.length - 2);
+    const monthNum = months[month];
+    const yearNum = year;
+    return `${yearNum}-${monthNum}-${dayNum.length === 1 ? '0' + dayNum : dayNum}`;
 };
 // @lc code=end
