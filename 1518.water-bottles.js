@@ -11,8 +11,13 @@
  * @return {number}
  */
 var numWaterBottles = function(numBottles, numExchange) {
-    const emptyBottles = numBottles;
+    let emptyBottles = numBottles;
     let total = numBottles;
-    
+    while (emptyBottles >= numExchange) {
+        const newBottles = Math.floor(emptyBottles / numExchange);
+        total += newBottles;
+        emptyBottles = newBottles + emptyBottles % numExchange;
+    }
+    return total;
 };
 // @lc code=end
