@@ -21,5 +21,6 @@ var findKthPositive = function(arr, k) {
             }
         }
     }
+    return arr[arr.length - 1] + k - count;
 };
 // @lc code=end
