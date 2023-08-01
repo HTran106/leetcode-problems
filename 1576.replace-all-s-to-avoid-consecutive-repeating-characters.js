@@ -25,5 +25,6 @@ var modifyString = function(s) {
             result += s[i];
         }
     }
+    return result;
 };
 // @lc code=end
