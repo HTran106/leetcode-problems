@@ -10,7 +10,8 @@
  * @return {string}
  */
 var modifyString = function(s) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let result = '';
     
 };
 // @lc code=end
-
