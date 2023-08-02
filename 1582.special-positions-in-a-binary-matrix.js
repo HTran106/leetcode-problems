@@ -21,5 +21,13 @@ var numSpecial = function(mat) {
     for (let i = 0; i < col; i++) {
         colSum[i] = mat.reduce((acc, cur) => acc + cur[i], 0);
     }
+    for (let i = 0; i < row; i++) {
+        if (rowSum[i] !== 1) continue;
+        for (let j = 0; j < col; j++) {
+            if (colSum[j] !== 1) continue;
+            if (mat[i][j] === 1) result++;
+        }
+    }
+    return result;
 };
 // @lc code=end
