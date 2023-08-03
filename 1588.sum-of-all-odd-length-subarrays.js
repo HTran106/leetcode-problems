@@ -12,6 +12,9 @@
 var sumOddLengthSubarrays = function(arr) {
     const len = arr.length;
     let result = 0;
-    
+    for (let i = 0; i < len; i++) {
+        result += arr[i] * Math.ceil((i + 1) * (len - i) / 2);
+    }
+    return result;
 };
 // @lc code=end
