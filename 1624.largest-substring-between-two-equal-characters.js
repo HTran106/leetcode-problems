@@ -20,5 +20,6 @@ var maxLengthBetweenEqualCharacters = function(s) {
             max = Math.max(max, i - map[char] - 1);
         }
     }
+    return max;
 };
 // @lc code=end
