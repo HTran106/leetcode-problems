@@ -10,18 +10,18 @@
  * @param {string} keysPressed
  * @return {character}
  */
-var slowestKey = function(releaseTimes, keysPressed) {
-    const map = {};
-    let max = -1;
-    for (let i = 0; i < releaseTimes.length; i++) {
-        const time = releaseTimes[i];
-        const char = keysPressed[i];
-        if (map[char] === undefined) {
-            map[char] = time;
-        } else {
-            map[char] = Math.max(map[char], time - releaseTimes[i - 1]);
+var slowestKey = function (releaseTimes, keysPressed) {
+    let max = releaseTimes[0];
+    let maxChar = keysPressed[0];
+    for (let i = 1; i < releaseTimes.length; i++) {
+        const time = releaseTimes[i] - releaseTimes[i - 1];
+        if (time > max) {
+            max = time;
+            maxChar = keysPressed[i];
+        } else if (time === max && keysPressed[i] > maxChar) {
+            maxChar = keysPressed[i];
         }
-        max = Math.max(max, map[char]);
     }
+    return maxChar;
 };
 // @lc code=end
