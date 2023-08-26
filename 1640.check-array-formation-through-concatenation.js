@@ -16,6 +16,18 @@ var canFormArray = function(arr, pieces) {
         map[piece[0]] = piece;
     }
     let i = 0;
-    
+    while (i < arr.length) {
+        const piece = map[arr[i]];
+        if (piece === undefined) {
+            return false;
+        }
+        for (const num of piece) {
+            if (num !== arr[i]) {
+                return false;
+            }
+            i++;
+        }
+    }
+    return true;
 };
 // @lc code=end
