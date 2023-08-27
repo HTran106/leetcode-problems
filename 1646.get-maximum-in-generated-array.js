@@ -10,7 +10,7 @@
  * @return {number}
  */
 var getMaximumGenerated = function(n) {
-    
+    const nums = [0, 1];
+    let max = 1;
 };
 // @lc code=end
-
