@@ -11,19 +11,30 @@
  * @return {number[]}
  */
 var decrypt = function(code, k) {
-    const res = new Array(code.length).fill(0);
+    let sum = 0;
+    const res = [];
     if (k === 0) {
-        return res;
+        return new Array(code.length).fill(0);
     }
-    const isPositive = k > 0;
-    k = Math.abs(k);
-    for (let i = 0; i < code.length; i++) {
-        let sum = 0;
-        for (let j = 1; j <= k; j++) {
-            const index = (i + j) % code.length;
-            sum += code[index];
+    if (k > 0) {
+        for (let i = 1; i <= k; i++) {
+            sum += code[i];
         }
-        res[i] = isPositive ? sum : -sum;
+        for (let i = 0; i < code.length; i++) {
+            res.push(sum);
+            sum -= code[(i + 1) % code.length];
+            sum += code[(i + 1 + k) % code.length];
+        }
+    }
+    if (k < 0) {
+        for (let i = code.length - 1; i >= code.length + k; i--) {
+            sum += code[i];
+        }
+        for (let i = 0; i < code.length; i++) {
+            res.push(sum);
+            sum -= code[(i + code.length + k) % code.length];
+            sum += code[i];
+        }
     }
     return res;
 };
