@@ -9,11 +9,7 @@
  * @param {number} n
  */
 var OrderedStream = function(n) {
-    let arr = new Array(n);
-    for (let i = 0; i < n; i++) {
-        arr[i] = '';
-    }
-    this.arr = arr;
+    this.arr = new Array(n).fill('');
     this.ptr = 0;
 
 };
