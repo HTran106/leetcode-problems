@@ -11,6 +11,12 @@
  * @return {number}
  */
 var maxRepeating = function(sequence, word) {
-    
+    let res = 0;
+    let temp = word;
+    while (sequence.includes(temp)) {
+        res++;
+        temp += word;
+    }
+    return res;
 };
 // @lc code=end
