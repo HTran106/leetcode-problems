@@ -11,7 +11,8 @@
  * @return {number}
  */
 var countConsistentStrings = function(allowed, words) {
+    const set = new Set(allowed);
+    let res = 0;
     
 };
 // @lc code=end
-
