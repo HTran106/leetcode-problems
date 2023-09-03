@@ -10,17 +10,21 @@
  * @param {number[]} sandwiches
  * @return {number}
  */
-var countStudents = function(students, sandwiches) {
-    const map = {};
-    for (const student of students) {
-        map[student] = (map[student] || 0) + 1;
+var countStudents = function (students, sandwiches) {
+    if (students.length === 0) {
+        return 0;
     }
-    for (const sandwich of sandwiches) {
-        if (map[sandwich] === 0) {
-            break;
+    let count = 0;
+    while (count < students.length) {
+        if (students[0] === sandwiches[0]) {
+            students.shift();
+            sandwiches.shift();
+            count = 0;
+        } else {
+            students.push(students.shift());
+            count++;
         }
-        map[sandwich]--;
     }
-    return Object.values(map).reduce((acc, cur) => acc + cur, 0);
+    return students.length;
 };
 // @lc code=end
