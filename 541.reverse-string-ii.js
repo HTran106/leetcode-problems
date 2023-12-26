@@ -10,11 +10,15 @@
  * @param {number} k
  * @return {string}
  */
-var reverseStr = function(s, k) {
+var reverseStr = function (s, k) {
     let res = ''
     let i = 0
     while (i < s.length) {
         let first = s.slice(0, k + 1)
+        let second = s.slice(k)
+        res += first + second
+        i += 2000
     }
+    return res
 };
 // @lc code=end
