@@ -27,29 +27,42 @@ check
 */
 
 
-var isValid = function(s) {
-   if (s.length % 2 !== 0) return false
-   const stack = []
+var isValid = function (s) {
+    if (s.length % 2 !== 0) return false
+    const stack = []
     for (let i = 0; i < s.length; i++) {
         let char = s[i]
-    if (char === '[' || char === '(' || char === '{') stack.push(char)
-    else {
-        console.log(stack)
-        const last = stack.pop()
-        if (char === ']' && last !== '[') return false
-        if (char === '}' && last !== '{') return false
-        if (char === ')' && last !== '(') return false
+        if (char === '[' || char === '(' || char === '{') stack.push(char)
+        else {
+            console.log(stack)
+            const last = stack.pop()
+            if (char === ']' && last !== '[') return false
+            if (char === '}' && last !== '{') return false
+            if (char === ')' && last !== '(') return false
+        }
     }
-   }
-   return stack.length === 0
+    return stack.length === 0
 };
 // @lc code=end
 
-
+// if (s.length % 2 !== 0) return false
+//    const stack = []
+//     for (let i = 0; i < s.length; i++) {
+//         let char = s[i]
+//     if (char === '[' || char === '(' || char === '{') stack.push(char)
+//     else {
+//         console.log(stack)
+//         const last = stack.pop()
+//         if (char === ']' && last !== '[') return false
+//         if (char === '}' && last !== '{') return false
+//         if (char === ')' && last !== '(') return false
+//     }
+//    }
+//    return stack.length === 0
 //create a function to find out what century a year is in
 
-function centuryFromYear(year) {
-    let century = Math.floor(year / 100)
-    if (year % 100 === 0) return century
-    else return century + 1
-}
+// function centuryFromYear(year) {
+//     let century = Math.floor(year / 100)
+//     if (year % 100 === 0) return century
+//     else return century + 1
+// }
