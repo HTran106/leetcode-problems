@@ -10,11 +10,10 @@
  * @return {number}
  */
 var missingNumber = function (nums) {
-    const n = nums.length
-    let res = []
-    for (let i = 0; i <= n; i++) {
-        if (!nums.includes(i)) {
-            return i
+    const numbers = new Set(nums);
+    for (let i = 0; i <= nums.length; i++) {
+        if (!numbers.has(i)) {
+            return i;
         }
     }
 };

@@ -45,6 +45,26 @@ var generate = function (numRows) {
     //     numRows--
     // }
     // return res
+
+    if (numRows === 1) return [[1]]
+    if (numRows === 2) return [[1], [1,1]]
+
+    const triangle = [[1],[1,1]]
+
+    let i = 3
+    while (i !== numRows + 1) {
+        last = triangle[triangle.length - 1]
+        next = [1]
+
+        for (let i = 0; i < last.length - 1; i++) {
+            next.push(last[i] + last[i + 1])
+        }
+
+        next.push(1)
+        triangle.push(next)
+        i++
+    }
+    return triangle
 };
 // @lc code=end
 
@@ -64,4 +84,5 @@ let res = [
         res.push(newRow);
     }
     return res
+
 */
