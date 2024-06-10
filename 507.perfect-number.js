@@ -9,13 +9,17 @@
  * @param {number} num
  * @return {boolean}
  */
-var checkPerfectNumber = function(num) {
-    let divisors = []
+
+const divisors = num => {
+    const res = []
+
     for (let i = 1; i < num; i++) {
-        if (num % i === 0) {
-            divisors.push(i)
-        }
+        if (num % i === 0) res.push(i)
     }
-    return divisors.reduce((a, b) => a + b, 0) === num
+
+    return res
+}
+var checkPerfectNumber = function(num) {
+    return divisors(num).reduce((a, c) => a + c, 0) === num
 };
 // @lc code=end
